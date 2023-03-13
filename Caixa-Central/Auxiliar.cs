@@ -23,9 +23,14 @@ namespace Caixa_Central
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
+                responseContent = responseContent.Substring(1, responseContent.Length - 2);
                 if (responseContent.Equals("Authorized"))
                 {
-                    MessageBox.Show("Deu certo");
+                    
+                }
+                else
+                {
+                    MessageBox.Show(responseContent);
                 }
             }
             else
