@@ -1,6 +1,6 @@
 ﻿namespace Caixa_Central
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -84,7 +84,7 @@
             textBoxPassWord.TabIndex = 4;
             textBoxPassWord.KeyPress += TextBoxPassWord_KeyPress;
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -95,8 +95,9 @@
             Controls.Add(label1);
             Controls.Add(textBoxNome);
             Controls.Add(pictureBox1);
-            Name = "Form1";
+            Name = "Login";
             Text = "Login";
+            FormClosed += Login_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

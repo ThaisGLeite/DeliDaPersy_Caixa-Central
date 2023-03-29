@@ -1,16 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace Caixa_Central
 {
     public static class Auxiliar
     {
-        public static async Task Login(string n, string s)
+        public static async Task<string> Login(string n, string s)
         {
             var data = new { nome = n, senha = s };
             var json = JsonConvert.SerializeObject(data);
@@ -23,19 +18,23 @@ namespace Caixa_Central
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                responseContent = responseContent.Substring(1, responseContent.Length - 2);
+
+                //Tem q retirar a primeira e ultima letras pq ele vem com as aspas
+                responseContent = responseContent[1..^1];
                 if (responseContent.Equals("Authorized"))
                 {
-                    
+                    return responseContent;
                 }
                 else
                 {
                     MessageBox.Show(responseContent);
+                    return "Erro";
                 }
             }
             else
             {
                 MessageBox.Show($"Erro ao fazer login {response.StatusCode}");
+                return "Erro";
             }
         }
 
