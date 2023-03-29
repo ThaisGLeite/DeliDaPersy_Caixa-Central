@@ -54,24 +54,25 @@
             groupBoxClientes = new GroupBox();
             tabPageCaixa = new TabPage();
             CadastroAssinantes = new TabPage();
+            buttonCadastroAssianteConfirmarDados = new Button();
+            groupBoxCadastroAssinantesTempoPlano = new GroupBox();
+            radioButtonCadastroAssinantes12meses = new RadioButton();
+            radioButtonCadastroAssinantes6meses = new RadioButton();
+            radioButtonCadastroAssinantes1mes = new RadioButton();
             groupBoxCadastroAssinantesPlanoEscolhido = new GroupBox();
+            radioButtonCadastroAssinantesFamily = new RadioButton();
+            radioButtonCadastroAssinantesHolics = new RadioButton();
+            radioButtonCadastroAssinantesForFun = new RadioButton();
             textBoxCadastroAssinantesSobreNome = new TextBox();
             textBoxCadastroAssinantesNome = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            groupBoxCadastroAssinantesTempoPlano = new GroupBox();
-            radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
-            radioButton6 = new RadioButton();
-            buttonCadastroAssianteConfirmarDados = new Button();
+            groupBoxCadastroAssinantesPagar = new GroupBox();
             tabControl1.SuspendLayout();
             tabPageClientes.SuspendLayout();
             CadastroAssinantes.SuspendLayout();
-            groupBoxCadastroAssinantesPlanoEscolhido.SuspendLayout();
             groupBoxCadastroAssinantesTempoPlano.SuspendLayout();
+            groupBoxCadastroAssinantesPlanoEscolhido.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -339,6 +340,7 @@
             // CadastroAssinantes
             // 
             CadastroAssinantes.BackColor = Color.DarkGray;
+            CadastroAssinantes.Controls.Add(groupBoxCadastroAssinantesPagar);
             CadastroAssinantes.Controls.Add(buttonCadastroAssianteConfirmarDados);
             CadastroAssinantes.Controls.Add(groupBoxCadastroAssinantesTempoPlano);
             CadastroAssinantes.Controls.Add(groupBoxCadastroAssinantesPlanoEscolhido);
@@ -353,11 +355,71 @@
             CadastroAssinantes.TabIndex = 2;
             CadastroAssinantes.Text = "Cadastro Assinantes";
             // 
+            // buttonCadastroAssianteConfirmarDados
+            // 
+            buttonCadastroAssianteConfirmarDados.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCadastroAssianteConfirmarDados.Location = new Point(18, 648);
+            buttonCadastroAssianteConfirmarDados.Name = "buttonCadastroAssianteConfirmarDados";
+            buttonCadastroAssianteConfirmarDados.Size = new Size(273, 53);
+            buttonCadastroAssianteConfirmarDados.TabIndex = 5;
+            buttonCadastroAssianteConfirmarDados.Text = "Prosseguir para pagamento";
+            buttonCadastroAssianteConfirmarDados.UseVisualStyleBackColor = true;
+            buttonCadastroAssianteConfirmarDados.Visible = false;
+            buttonCadastroAssianteConfirmarDados.Click += ButtonCadastroAssianteConfirmarDados_Click;
+            // 
+            // groupBoxCadastroAssinantesTempoPlano
+            // 
+            groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButtonCadastroAssinantes12meses);
+            groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButtonCadastroAssinantes6meses);
+            groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButtonCadastroAssinantes1mes);
+            groupBoxCadastroAssinantesTempoPlano.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBoxCadastroAssinantesTempoPlano.Location = new Point(18, 408);
+            groupBoxCadastroAssinantesTempoPlano.Name = "groupBoxCadastroAssinantesTempoPlano";
+            groupBoxCadastroAssinantesTempoPlano.Size = new Size(273, 222);
+            groupBoxCadastroAssinantesTempoPlano.TabIndex = 4;
+            groupBoxCadastroAssinantesTempoPlano.TabStop = false;
+            groupBoxCadastroAssinantesTempoPlano.Text = "Duração do Plano";
+            groupBoxCadastroAssinantesTempoPlano.Visible = false;
+            // 
+            // radioButtonCadastroAssinantes12meses
+            // 
+            radioButtonCadastroAssinantes12meses.AutoSize = true;
+            radioButtonCadastroAssinantes12meses.Location = new Point(15, 179);
+            radioButtonCadastroAssinantes12meses.Name = "radioButtonCadastroAssinantes12meses";
+            radioButtonCadastroAssinantes12meses.Size = new Size(109, 27);
+            radioButtonCadastroAssinantes12meses.TabIndex = 2;
+            radioButtonCadastroAssinantes12meses.TabStop = true;
+            radioButtonCadastroAssinantes12meses.Text = "12 Meses";
+            radioButtonCadastroAssinantes12meses.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonCadastroAssinantes6meses
+            // 
+            radioButtonCadastroAssinantes6meses.AutoSize = true;
+            radioButtonCadastroAssinantes6meses.Location = new Point(15, 110);
+            radioButtonCadastroAssinantes6meses.Name = "radioButtonCadastroAssinantes6meses";
+            radioButtonCadastroAssinantes6meses.Size = new Size(98, 27);
+            radioButtonCadastroAssinantes6meses.TabIndex = 1;
+            radioButtonCadastroAssinantes6meses.TabStop = true;
+            radioButtonCadastroAssinantes6meses.Text = "6 Meses";
+            radioButtonCadastroAssinantes6meses.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonCadastroAssinantes1mes
+            // 
+            radioButtonCadastroAssinantes1mes.AutoSize = true;
+            radioButtonCadastroAssinantes1mes.Location = new Point(15, 41);
+            radioButtonCadastroAssinantes1mes.Name = "radioButtonCadastroAssinantes1mes";
+            radioButtonCadastroAssinantes1mes.Size = new Size(80, 27);
+            radioButtonCadastroAssinantes1mes.TabIndex = 0;
+            radioButtonCadastroAssinantes1mes.TabStop = true;
+            radioButtonCadastroAssinantes1mes.Text = "1 Mês";
+            radioButtonCadastroAssinantes1mes.UseVisualStyleBackColor = true;
+            radioButtonCadastroAssinantes1mes.Click += RadioButtonCadastroAssinantes1mes_Click;
+            // 
             // groupBoxCadastroAssinantesPlanoEscolhido
             // 
-            groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButton3);
-            groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButton2);
-            groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButton1);
+            groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButtonCadastroAssinantesFamily);
+            groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButtonCadastroAssinantesHolics);
+            groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButtonCadastroAssinantesForFun);
             groupBoxCadastroAssinantesPlanoEscolhido.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBoxCadastroAssinantesPlanoEscolhido.Location = new Point(18, 148);
             groupBoxCadastroAssinantesPlanoEscolhido.Name = "groupBoxCadastroAssinantesPlanoEscolhido";
@@ -366,6 +428,42 @@
             groupBoxCadastroAssinantesPlanoEscolhido.TabStop = false;
             groupBoxCadastroAssinantesPlanoEscolhido.Text = "Plano Escolhido";
             groupBoxCadastroAssinantesPlanoEscolhido.Visible = false;
+            // 
+            // radioButtonCadastroAssinantesFamily
+            // 
+            radioButtonCadastroAssinantesFamily.AutoSize = true;
+            radioButtonCadastroAssinantesFamily.Location = new Point(15, 179);
+            radioButtonCadastroAssinantesFamily.Name = "radioButtonCadastroAssinantesFamily";
+            radioButtonCadastroAssinantesFamily.Size = new Size(115, 27);
+            radioButtonCadastroAssinantesFamily.TabIndex = 2;
+            radioButtonCadastroAssinantesFamily.TabStop = true;
+            radioButtonCadastroAssinantesFamily.Text = "For Family";
+            radioButtonCadastroAssinantesFamily.UseVisualStyleBackColor = true;
+            radioButtonCadastroAssinantesFamily.Click += RadioButtonCadastroAssinantesForFun_Click;
+            // 
+            // radioButtonCadastroAssinantesHolics
+            // 
+            radioButtonCadastroAssinantesHolics.AutoSize = true;
+            radioButtonCadastroAssinantesHolics.Location = new Point(15, 110);
+            radioButtonCadastroAssinantesHolics.Name = "radioButtonCadastroAssinantesHolics";
+            radioButtonCadastroAssinantesHolics.Size = new Size(113, 27);
+            radioButtonCadastroAssinantesHolics.TabIndex = 1;
+            radioButtonCadastroAssinantesHolics.TabStop = true;
+            radioButtonCadastroAssinantesHolics.Text = "For Holics";
+            radioButtonCadastroAssinantesHolics.UseVisualStyleBackColor = true;
+            radioButtonCadastroAssinantesHolics.Click += RadioButtonCadastroAssinantesForFun_Click;
+            // 
+            // radioButtonCadastroAssinantesForFun
+            // 
+            radioButtonCadastroAssinantesForFun.AutoSize = true;
+            radioButtonCadastroAssinantesForFun.Location = new Point(15, 41);
+            radioButtonCadastroAssinantesForFun.Name = "radioButtonCadastroAssinantesForFun";
+            radioButtonCadastroAssinantesForFun.Size = new Size(93, 27);
+            radioButtonCadastroAssinantesForFun.TabIndex = 0;
+            radioButtonCadastroAssinantesForFun.TabStop = true;
+            radioButtonCadastroAssinantesForFun.Text = "For Fun";
+            radioButtonCadastroAssinantesForFun.UseVisualStyleBackColor = true;
+            radioButtonCadastroAssinantesForFun.Click += RadioButtonCadastroAssinantesForFun_Click;
             // 
             // textBoxCadastroAssinantesSobreNome
             // 
@@ -404,95 +502,16 @@
             label1.TabIndex = 0;
             label1.Text = "Nome:";
             // 
-            // radioButton1
+            // groupBoxCadastroAssinantesPagar
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(15, 41);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(140, 27);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(15, 110);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(140, 27);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(15, 179);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(140, 27);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxCadastroAssinantesTempoPlano
-            // 
-            groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButton4);
-            groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButton5);
-            groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButton6);
-            groupBoxCadastroAssinantesTempoPlano.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxCadastroAssinantesTempoPlano.Location = new Point(18, 408);
-            groupBoxCadastroAssinantesTempoPlano.Name = "groupBoxCadastroAssinantesTempoPlano";
-            groupBoxCadastroAssinantesTempoPlano.Size = new Size(273, 222);
-            groupBoxCadastroAssinantesTempoPlano.TabIndex = 4;
-            groupBoxCadastroAssinantesTempoPlano.TabStop = false;
-            groupBoxCadastroAssinantesTempoPlano.Text = "Duração do Plano";
-            groupBoxCadastroAssinantesTempoPlano.Visible = false;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(15, 179);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(109, 27);
-            radioButton4.TabIndex = 2;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "12 Meses";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(15, 110);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(98, 27);
-            radioButton5.TabIndex = 1;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "6 Meses";
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(15, 41);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(80, 27);
-            radioButton6.TabIndex = 0;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "1 Mês";
-            radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // buttonCadastroAssianteConfirmarDados
-            // 
-            buttonCadastroAssianteConfirmarDados.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonCadastroAssianteConfirmarDados.Location = new Point(18, 648);
-            buttonCadastroAssianteConfirmarDados.Name = "buttonCadastroAssianteConfirmarDados";
-            buttonCadastroAssianteConfirmarDados.Size = new Size(273, 53);
-            buttonCadastroAssianteConfirmarDados.TabIndex = 5;
-            buttonCadastroAssianteConfirmarDados.Text = "Prosseguir para pagamento";
-            buttonCadastroAssianteConfirmarDados.UseVisualStyleBackColor = true;
+            groupBoxCadastroAssinantesPagar.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBoxCadastroAssinantesPagar.Location = new Point(335, 36);
+            groupBoxCadastroAssinantesPagar.Name = "groupBoxCadastroAssinantesPagar";
+            groupBoxCadastroAssinantesPagar.Size = new Size(273, 594);
+            groupBoxCadastroAssinantesPagar.TabIndex = 6;
+            groupBoxCadastroAssinantesPagar.TabStop = false;
+            groupBoxCadastroAssinantesPagar.Text = "Duração do Plano";
+            groupBoxCadastroAssinantesPagar.Visible = false;
             // 
             // JanelaCentral
             // 
@@ -509,10 +528,10 @@
             tabPageClientes.ResumeLayout(false);
             CadastroAssinantes.ResumeLayout(false);
             CadastroAssinantes.PerformLayout();
-            groupBoxCadastroAssinantesPlanoEscolhido.ResumeLayout(false);
-            groupBoxCadastroAssinantesPlanoEscolhido.PerformLayout();
             groupBoxCadastroAssinantesTempoPlano.ResumeLayout(false);
             groupBoxCadastroAssinantesTempoPlano.PerformLayout();
+            groupBoxCadastroAssinantesPlanoEscolhido.ResumeLayout(false);
+            groupBoxCadastroAssinantesPlanoEscolhido.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -548,13 +567,14 @@
         private TextBox textBoxCadastroAssinantesNome;
         private TextBox textBoxCadastroAssinantesSobreNome;
         private GroupBox groupBoxCadastroAssinantesPlanoEscolhido;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton radioButtonCadastroAssinantesFamily;
+        private RadioButton radioButtonCadastroAssinantesHolics;
+        private RadioButton radioButtonCadastroAssinantesForFun;
         private GroupBox groupBoxCadastroAssinantesTempoPlano;
-        private RadioButton radioButton4;
-        private RadioButton radioButton5;
-        private RadioButton radioButton6;
+        private RadioButton radioButtonCadastroAssinantes12meses;
+        private RadioButton radioButtonCadastroAssinantes6meses;
+        private RadioButton radioButtonCadastroAssinantes1mes;
         private Button buttonCadastroAssianteConfirmarDados;
+        private GroupBox groupBoxCadastroAssinantesPagar;
     }
 }

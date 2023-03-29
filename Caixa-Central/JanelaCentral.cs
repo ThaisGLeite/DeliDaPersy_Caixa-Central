@@ -29,5 +29,26 @@ namespace Caixa_Central
                 groupBoxCadastroAssinantesPlanoEscolhido.Visible = true;
             }
         }
+
+        private void RadioButtonCadastroAssinantesForFun_Click(object sender, EventArgs e)
+        {
+            if (radioButtonCadastroAssinantesHolics.Checked || radioButtonCadastroAssinantesForFun.Checked || radioButtonCadastroAssinantesFamily.Checked)
+            {
+                groupBoxCadastroAssinantesTempoPlano.Visible = true;
+            }
+        }
+
+        private void RadioButtonCadastroAssinantes1mes_Click(object sender, EventArgs e)
+        {
+            if (radioButtonCadastroAssinantes1mes.Checked || radioButtonCadastroAssinantes6meses.Checked || radioButtonCadastroAssinantes12meses.Checked)
+            {
+                buttonCadastroAssianteConfirmarDados.Visible = true;
+            }
+        }
+
+        private void ButtonCadastroAssianteConfirmarDados_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
