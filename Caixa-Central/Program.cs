@@ -8,6 +8,8 @@ namespace Caixa_Central
         [STAThread]
         static void Main()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTU0MDU1NEAzMjMxMmUzMTJlMzMzN0pVL0FJdU1EV1MzWmE1aloyQk04amt5M1NvcjJCSEp2SXd4bTBRNHg3cDg9");
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
