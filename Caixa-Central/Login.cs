@@ -33,7 +33,7 @@ namespace Caixa_Central
                             }
                             else
                             {
-                                MessageBox.Show(logar);
+                                MessageBox.Show("Erro ao logar com: "+logar);
                             }
                         }
                     }

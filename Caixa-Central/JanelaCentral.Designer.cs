@@ -32,7 +32,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaCentral));
             tabControl1 = new TabControl();
             tabPageClientes = new TabPage();
+            groupBox1 = new GroupBox();
             groupBoxClientes = new GroupBox();
+            groupBoxClientesNovaMesa = new GroupBox();
+            buttonCliente25 = new Button();
+            buttonCliente21 = new Button();
+            buttonCliente24 = new Button();
+            buttonCliente23 = new Button();
+            buttonCliente22 = new Button();
+            buttonCliente20 = new Button();
+            buttonCliente16 = new Button();
+            buttonCliente19 = new Button();
+            buttonCliente18 = new Button();
+            buttonCliente17 = new Button();
+            buttonCliente15 = new Button();
+            buttonCliente11 = new Button();
+            buttonCliente14 = new Button();
+            buttonCliente13 = new Button();
+            buttonCliente12 = new Button();
+            buttonCliente10 = new Button();
+            buttonCliente6 = new Button();
+            buttonCliente9 = new Button();
+            buttonCliente8 = new Button();
+            buttonCliente7 = new Button();
+            buttonCliente5 = new Button();
+            buttonCliente1 = new Button();
+            buttonCliente4 = new Button();
+            buttonCliente3 = new Button();
+            buttonCliente2 = new Button();
             tabPageCaixa = new TabPage();
             CadastroAssinantes = new TabPage();
             calculatorControl1 = new Syncfusion.Windows.Forms.Tools.CalculatorControl();
@@ -73,33 +100,6 @@
             textBoxCadastroAssinantesNome = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            buttonCliente1 = new Button();
-            buttonCliente2 = new Button();
-            buttonCliente3 = new Button();
-            buttonCliente4 = new Button();
-            buttonCliente5 = new Button();
-            groupBox1 = new GroupBox();
-            buttonCliente10 = new Button();
-            buttonCliente6 = new Button();
-            buttonCliente9 = new Button();
-            buttonCliente8 = new Button();
-            buttonCliente7 = new Button();
-            buttonCliente15 = new Button();
-            buttonCliente11 = new Button();
-            buttonCliente14 = new Button();
-            buttonCliente13 = new Button();
-            buttonCliente12 = new Button();
-            buttonCliente20 = new Button();
-            buttonCliente16 = new Button();
-            buttonCliente19 = new Button();
-            buttonCliente18 = new Button();
-            buttonCliente17 = new Button();
-            buttonCliente25 = new Button();
-            buttonCliente21 = new Button();
-            buttonCliente24 = new Button();
-            buttonCliente23 = new Button();
-            buttonCliente22 = new Button();
-            groupBoxClientesNovaMesa = new GroupBox();
             tabControl1.SuspendLayout();
             tabPageClientes.SuspendLayout();
             groupBoxClientes.SuspendLayout();
@@ -139,6 +139,15 @@
             tabPageClientes.Text = "Clientes";
             tabPageClientes.Enter += TabPageClientes_Enter;
             // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(901, 6);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(865, 762);
+            groupBox1.TabIndex = 22;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
             // groupBoxClientes
             // 
             groupBoxClientes.BackColor = Color.DarkGray;
@@ -174,6 +183,267 @@
             groupBoxClientes.TabIndex = 21;
             groupBoxClientes.TabStop = false;
             groupBoxClientes.Text = "Selecione o cliente";
+            // 
+            // groupBoxClientesNovaMesa
+            // 
+            groupBoxClientesNovaMesa.Location = new Point(20, 640);
+            groupBoxClientesNovaMesa.Name = "groupBoxClientesNovaMesa";
+            groupBoxClientesNovaMesa.Size = new Size(830, 116);
+            groupBoxClientesNovaMesa.TabIndex = 46;
+            groupBoxClientesNovaMesa.TabStop = false;
+            groupBoxClientesNovaMesa.Text = "Abrir uma nova Mesa";
+            groupBoxClientesNovaMesa.Visible = false;
+            // 
+            // buttonCliente25
+            // 
+            buttonCliente25.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente25.Location = new Point(708, 525);
+            buttonCliente25.Name = "buttonCliente25";
+            buttonCliente25.Size = new Size(142, 95);
+            buttonCliente25.TabIndex = 45;
+            buttonCliente25.Text = "25";
+            buttonCliente25.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente21
+            // 
+            buttonCliente21.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente21.Location = new Point(20, 525);
+            buttonCliente21.Name = "buttonCliente21";
+            buttonCliente21.Size = new Size(142, 95);
+            buttonCliente21.TabIndex = 41;
+            buttonCliente21.Text = "21";
+            buttonCliente21.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente24
+            // 
+            buttonCliente24.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente24.Location = new Point(536, 525);
+            buttonCliente24.Name = "buttonCliente24";
+            buttonCliente24.Size = new Size(142, 95);
+            buttonCliente24.TabIndex = 44;
+            buttonCliente24.Text = "24";
+            buttonCliente24.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente23
+            // 
+            buttonCliente23.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente23.Location = new Point(364, 525);
+            buttonCliente23.Name = "buttonCliente23";
+            buttonCliente23.Size = new Size(142, 95);
+            buttonCliente23.TabIndex = 43;
+            buttonCliente23.Text = "23";
+            buttonCliente23.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente22
+            // 
+            buttonCliente22.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente22.Location = new Point(192, 525);
+            buttonCliente22.Name = "buttonCliente22";
+            buttonCliente22.Size = new Size(142, 95);
+            buttonCliente22.TabIndex = 42;
+            buttonCliente22.Text = "22";
+            buttonCliente22.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente20
+            // 
+            buttonCliente20.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente20.Location = new Point(708, 398);
+            buttonCliente20.Name = "buttonCliente20";
+            buttonCliente20.Size = new Size(142, 95);
+            buttonCliente20.TabIndex = 40;
+            buttonCliente20.Text = "20";
+            buttonCliente20.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente16
+            // 
+            buttonCliente16.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente16.Location = new Point(20, 398);
+            buttonCliente16.Name = "buttonCliente16";
+            buttonCliente16.Size = new Size(142, 95);
+            buttonCliente16.TabIndex = 36;
+            buttonCliente16.Text = "16";
+            buttonCliente16.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente19
+            // 
+            buttonCliente19.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente19.Location = new Point(536, 398);
+            buttonCliente19.Name = "buttonCliente19";
+            buttonCliente19.Size = new Size(142, 95);
+            buttonCliente19.TabIndex = 39;
+            buttonCliente19.Text = "19";
+            buttonCliente19.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente18
+            // 
+            buttonCliente18.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente18.Location = new Point(364, 398);
+            buttonCliente18.Name = "buttonCliente18";
+            buttonCliente18.Size = new Size(142, 95);
+            buttonCliente18.TabIndex = 38;
+            buttonCliente18.Text = "18";
+            buttonCliente18.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente17
+            // 
+            buttonCliente17.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente17.Location = new Point(192, 398);
+            buttonCliente17.Name = "buttonCliente17";
+            buttonCliente17.Size = new Size(142, 95);
+            buttonCliente17.TabIndex = 37;
+            buttonCliente17.Text = "17";
+            buttonCliente17.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente15
+            // 
+            buttonCliente15.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente15.Location = new Point(708, 272);
+            buttonCliente15.Name = "buttonCliente15";
+            buttonCliente15.Size = new Size(142, 95);
+            buttonCliente15.TabIndex = 35;
+            buttonCliente15.Text = "15";
+            buttonCliente15.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente11
+            // 
+            buttonCliente11.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente11.Location = new Point(20, 272);
+            buttonCliente11.Name = "buttonCliente11";
+            buttonCliente11.Size = new Size(142, 95);
+            buttonCliente11.TabIndex = 31;
+            buttonCliente11.Text = "11";
+            buttonCliente11.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente14
+            // 
+            buttonCliente14.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente14.Location = new Point(536, 272);
+            buttonCliente14.Name = "buttonCliente14";
+            buttonCliente14.Size = new Size(142, 95);
+            buttonCliente14.TabIndex = 34;
+            buttonCliente14.Text = "14";
+            buttonCliente14.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente13
+            // 
+            buttonCliente13.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente13.Location = new Point(364, 272);
+            buttonCliente13.Name = "buttonCliente13";
+            buttonCliente13.Size = new Size(142, 95);
+            buttonCliente13.TabIndex = 33;
+            buttonCliente13.Text = "13";
+            buttonCliente13.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente12
+            // 
+            buttonCliente12.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente12.Location = new Point(192, 272);
+            buttonCliente12.Name = "buttonCliente12";
+            buttonCliente12.Size = new Size(142, 95);
+            buttonCliente12.TabIndex = 32;
+            buttonCliente12.Text = "12";
+            buttonCliente12.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente10
+            // 
+            buttonCliente10.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente10.Location = new Point(708, 147);
+            buttonCliente10.Name = "buttonCliente10";
+            buttonCliente10.Size = new Size(142, 95);
+            buttonCliente10.TabIndex = 30;
+            buttonCliente10.Text = "10";
+            buttonCliente10.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente6
+            // 
+            buttonCliente6.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente6.Location = new Point(20, 147);
+            buttonCliente6.Name = "buttonCliente6";
+            buttonCliente6.Size = new Size(142, 95);
+            buttonCliente6.TabIndex = 26;
+            buttonCliente6.Text = "6";
+            buttonCliente6.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente9
+            // 
+            buttonCliente9.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente9.Location = new Point(536, 147);
+            buttonCliente9.Name = "buttonCliente9";
+            buttonCliente9.Size = new Size(142, 95);
+            buttonCliente9.TabIndex = 29;
+            buttonCliente9.Text = "9";
+            buttonCliente9.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente8
+            // 
+            buttonCliente8.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente8.Location = new Point(364, 147);
+            buttonCliente8.Name = "buttonCliente8";
+            buttonCliente8.Size = new Size(142, 95);
+            buttonCliente8.TabIndex = 28;
+            buttonCliente8.Text = "8";
+            buttonCliente8.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente7
+            // 
+            buttonCliente7.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente7.Location = new Point(192, 147);
+            buttonCliente7.Name = "buttonCliente7";
+            buttonCliente7.Size = new Size(142, 95);
+            buttonCliente7.TabIndex = 27;
+            buttonCliente7.Text = "7";
+            buttonCliente7.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente5
+            // 
+            buttonCliente5.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente5.Location = new Point(708, 27);
+            buttonCliente5.Name = "buttonCliente5";
+            buttonCliente5.Size = new Size(142, 95);
+            buttonCliente5.TabIndex = 25;
+            buttonCliente5.Text = "5";
+            buttonCliente5.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente1
+            // 
+            buttonCliente1.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente1.Location = new Point(20, 27);
+            buttonCliente1.Name = "buttonCliente1";
+            buttonCliente1.Size = new Size(142, 95);
+            buttonCliente1.TabIndex = 0;
+            buttonCliente1.Text = "1";
+            buttonCliente1.UseVisualStyleBackColor = true;
+            buttonCliente1.Click += ButtonCliente1_Click;
+            // 
+            // buttonCliente4
+            // 
+            buttonCliente4.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente4.Location = new Point(536, 27);
+            buttonCliente4.Name = "buttonCliente4";
+            buttonCliente4.Size = new Size(142, 95);
+            buttonCliente4.TabIndex = 24;
+            buttonCliente4.Text = "4";
+            buttonCliente4.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente3
+            // 
+            buttonCliente3.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente3.Location = new Point(364, 27);
+            buttonCliente3.Name = "buttonCliente3";
+            buttonCliente3.Size = new Size(142, 95);
+            buttonCliente3.TabIndex = 23;
+            buttonCliente3.Text = "3";
+            buttonCliente3.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente2
+            // 
+            buttonCliente2.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente2.Location = new Point(192, 27);
+            buttonCliente2.Name = "buttonCliente2";
+            buttonCliente2.Size = new Size(142, 95);
+            buttonCliente2.TabIndex = 22;
+            buttonCliente2.Text = "2";
+            buttonCliente2.UseVisualStyleBackColor = true;
             // 
             // tabPageCaixa
             // 
@@ -336,7 +606,7 @@
             buttonCadastroAssiantePagar.Text = "Confirmar Pagamento";
             buttonCadastroAssiantePagar.UseVisualStyleBackColor = true;
             buttonCadastroAssiantePagar.Visible = false;
-            buttonCadastroAssiantePagar.Click += ButtonCadastroAssiantePagar_Click;
+            buttonCadastroAssiantePagar.Click += ButtonCadastroAssiantePagar_ClickAsync;
             // 
             // label9
             // 
@@ -643,275 +913,6 @@
             label1.Size = new Size(67, 23);
             label1.TabIndex = 0;
             label1.Text = "Nome:";
-            // 
-            // buttonCliente1
-            // 
-            buttonCliente1.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente1.Location = new Point(20, 27);
-            buttonCliente1.Name = "buttonCliente1";
-            buttonCliente1.Size = new Size(142, 95);
-            buttonCliente1.TabIndex = 0;
-            buttonCliente1.Text = "1";
-            buttonCliente1.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente2
-            // 
-            buttonCliente2.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente2.Location = new Point(192, 27);
-            buttonCliente2.Name = "buttonCliente2";
-            buttonCliente2.Size = new Size(142, 95);
-            buttonCliente2.TabIndex = 22;
-            buttonCliente2.Text = "2";
-            buttonCliente2.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente3
-            // 
-            buttonCliente3.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente3.Location = new Point(364, 27);
-            buttonCliente3.Name = "buttonCliente3";
-            buttonCliente3.Size = new Size(142, 95);
-            buttonCliente3.TabIndex = 23;
-            buttonCliente3.Text = "3";
-            buttonCliente3.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente4
-            // 
-            buttonCliente4.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente4.Location = new Point(536, 27);
-            buttonCliente4.Name = "buttonCliente4";
-            buttonCliente4.Size = new Size(142, 95);
-            buttonCliente4.TabIndex = 24;
-            buttonCliente4.Text = "4";
-            buttonCliente4.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente5
-            // 
-            buttonCliente5.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente5.Location = new Point(708, 27);
-            buttonCliente5.Name = "buttonCliente5";
-            buttonCliente5.Size = new Size(142, 95);
-            buttonCliente5.TabIndex = 25;
-            buttonCliente5.Text = "5";
-            buttonCliente5.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Location = new Point(901, 6);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(865, 762);
-            groupBox1.TabIndex = 22;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
-            // 
-            // buttonCliente10
-            // 
-            buttonCliente10.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente10.Location = new Point(708, 147);
-            buttonCliente10.Name = "buttonCliente10";
-            buttonCliente10.Size = new Size(142, 95);
-            buttonCliente10.TabIndex = 30;
-            buttonCliente10.Text = "10";
-            buttonCliente10.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente6
-            // 
-            buttonCliente6.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente6.Location = new Point(20, 147);
-            buttonCliente6.Name = "buttonCliente6";
-            buttonCliente6.Size = new Size(142, 95);
-            buttonCliente6.TabIndex = 26;
-            buttonCliente6.Text = "6";
-            buttonCliente6.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente9
-            // 
-            buttonCliente9.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente9.Location = new Point(536, 147);
-            buttonCliente9.Name = "buttonCliente9";
-            buttonCliente9.Size = new Size(142, 95);
-            buttonCliente9.TabIndex = 29;
-            buttonCliente9.Text = "9";
-            buttonCliente9.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente8
-            // 
-            buttonCliente8.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente8.Location = new Point(364, 147);
-            buttonCliente8.Name = "buttonCliente8";
-            buttonCliente8.Size = new Size(142, 95);
-            buttonCliente8.TabIndex = 28;
-            buttonCliente8.Text = "8";
-            buttonCliente8.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente7
-            // 
-            buttonCliente7.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente7.Location = new Point(192, 147);
-            buttonCliente7.Name = "buttonCliente7";
-            buttonCliente7.Size = new Size(142, 95);
-            buttonCliente7.TabIndex = 27;
-            buttonCliente7.Text = "7";
-            buttonCliente7.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente15
-            // 
-            buttonCliente15.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente15.Location = new Point(708, 272);
-            buttonCliente15.Name = "buttonCliente15";
-            buttonCliente15.Size = new Size(142, 95);
-            buttonCliente15.TabIndex = 35;
-            buttonCliente15.Text = "15";
-            buttonCliente15.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente11
-            // 
-            buttonCliente11.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente11.Location = new Point(20, 272);
-            buttonCliente11.Name = "buttonCliente11";
-            buttonCliente11.Size = new Size(142, 95);
-            buttonCliente11.TabIndex = 31;
-            buttonCliente11.Text = "11";
-            buttonCliente11.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente14
-            // 
-            buttonCliente14.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente14.Location = new Point(536, 272);
-            buttonCliente14.Name = "buttonCliente14";
-            buttonCliente14.Size = new Size(142, 95);
-            buttonCliente14.TabIndex = 34;
-            buttonCliente14.Text = "14";
-            buttonCliente14.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente13
-            // 
-            buttonCliente13.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente13.Location = new Point(364, 272);
-            buttonCliente13.Name = "buttonCliente13";
-            buttonCliente13.Size = new Size(142, 95);
-            buttonCliente13.TabIndex = 33;
-            buttonCliente13.Text = "13";
-            buttonCliente13.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente12
-            // 
-            buttonCliente12.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente12.Location = new Point(192, 272);
-            buttonCliente12.Name = "buttonCliente12";
-            buttonCliente12.Size = new Size(142, 95);
-            buttonCliente12.TabIndex = 32;
-            buttonCliente12.Text = "12";
-            buttonCliente12.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente20
-            // 
-            buttonCliente20.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente20.Location = new Point(708, 398);
-            buttonCliente20.Name = "buttonCliente20";
-            buttonCliente20.Size = new Size(142, 95);
-            buttonCliente20.TabIndex = 40;
-            buttonCliente20.Text = "20";
-            buttonCliente20.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente16
-            // 
-            buttonCliente16.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente16.Location = new Point(20, 398);
-            buttonCliente16.Name = "buttonCliente16";
-            buttonCliente16.Size = new Size(142, 95);
-            buttonCliente16.TabIndex = 36;
-            buttonCliente16.Text = "16";
-            buttonCliente16.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente19
-            // 
-            buttonCliente19.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente19.Location = new Point(536, 398);
-            buttonCliente19.Name = "buttonCliente19";
-            buttonCliente19.Size = new Size(142, 95);
-            buttonCliente19.TabIndex = 39;
-            buttonCliente19.Text = "19";
-            buttonCliente19.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente18
-            // 
-            buttonCliente18.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente18.Location = new Point(364, 398);
-            buttonCliente18.Name = "buttonCliente18";
-            buttonCliente18.Size = new Size(142, 95);
-            buttonCliente18.TabIndex = 38;
-            buttonCliente18.Text = "18";
-            buttonCliente18.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente17
-            // 
-            buttonCliente17.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente17.Location = new Point(192, 398);
-            buttonCliente17.Name = "buttonCliente17";
-            buttonCliente17.Size = new Size(142, 95);
-            buttonCliente17.TabIndex = 37;
-            buttonCliente17.Text = "17";
-            buttonCliente17.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente25
-            // 
-            buttonCliente25.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente25.Location = new Point(708, 525);
-            buttonCliente25.Name = "buttonCliente25";
-            buttonCliente25.Size = new Size(142, 95);
-            buttonCliente25.TabIndex = 45;
-            buttonCliente25.Text = "25";
-            buttonCliente25.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente21
-            // 
-            buttonCliente21.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente21.Location = new Point(20, 525);
-            buttonCliente21.Name = "buttonCliente21";
-            buttonCliente21.Size = new Size(142, 95);
-            buttonCliente21.TabIndex = 41;
-            buttonCliente21.Text = "21";
-            buttonCliente21.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente24
-            // 
-            buttonCliente24.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente24.Location = new Point(536, 525);
-            buttonCliente24.Name = "buttonCliente24";
-            buttonCliente24.Size = new Size(142, 95);
-            buttonCliente24.TabIndex = 44;
-            buttonCliente24.Text = "24";
-            buttonCliente24.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente23
-            // 
-            buttonCliente23.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente23.Location = new Point(364, 525);
-            buttonCliente23.Name = "buttonCliente23";
-            buttonCliente23.Size = new Size(142, 95);
-            buttonCliente23.TabIndex = 43;
-            buttonCliente23.Text = "23";
-            buttonCliente23.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente22
-            // 
-            buttonCliente22.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente22.Location = new Point(192, 525);
-            buttonCliente22.Name = "buttonCliente22";
-            buttonCliente22.Size = new Size(142, 95);
-            buttonCliente22.TabIndex = 42;
-            buttonCliente22.Text = "22";
-            buttonCliente22.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxClientesNovaMesa
-            // 
-            groupBoxClientesNovaMesa.Location = new Point(20, 640);
-            groupBoxClientesNovaMesa.Name = "groupBoxClientesNovaMesa";
-            groupBoxClientesNovaMesa.Size = new Size(830, 100);
-            groupBoxClientesNovaMesa.TabIndex = 46;
-            groupBoxClientesNovaMesa.TabStop = false;
-            groupBoxClientesNovaMesa.Text = "Abrir uma nova Mesa";
-            groupBoxClientesNovaMesa.Visible = false;
             // 
             // JanelaCentral
             // 
