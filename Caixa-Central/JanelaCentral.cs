@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System.Globalization;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Text;
 
 namespace Caixa_Central
@@ -8,7 +7,9 @@ namespace Caixa_Central
     public partial class JanelaCentral : Form
     {
         readonly Usuario usuario;
-        private HttpClient httpClient;
+        private readonly HttpClient httpClient;
+        List<Assinante>? assinantes;
+        List<Mesa>? mesasOcupadas;
 
         public JanelaCentral(string nome)
         {
@@ -16,6 +17,44 @@ namespace Caixa_Central
             usuario = new(nome);
             this.Text = "Logado como: " + usuario.Nome;
             httpClient = new HttpClient();
+            assinantes = new List<Assinante>();
+            mesasOcupadas = new List<Mesa>();
+            GetAllAssinantes();
+            GetAllMesasAsync();
+        }
+
+        private async void GetAllMesasAsync()
+        {
+            string url = "https://rr2fat3qw6.execute-api.us-east-1.amazonaws.com/api-mesas/mesas";
+            try
+            {
+                // Send GET request to API
+                HttpResponseMessage response = await httpClient.GetAsync(url);
+                // Check if response is successful
+                response.EnsureSuccessStatusCode();
+                // Read response content
+                string responseContent = await response.Content.ReadAsStringAsync();
+                // Parse response content
+                mesasOcupadas = JsonConvert.DeserializeObject<List<Mesa>>(responseContent);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                return;
+            }
+            if (mesasOcupadas != null)
+            {
+                foreach (var mesa in mesasOcupadas)
+                {
+                    string nomeBotao = "buttonCliente" + mesa.Id;
+                    if (groupBoxClientes.Controls.Find(nomeBotao, true).FirstOrDefault() is Button foundButton)
+                    {
+                        foundButton.BackColor = Color.Green;
+                        foundButton.Text = mesa.Cliente;
+                    }
+                } 
+            }
         }
 
         private void JanelaCentral_FormClosed(object sender, FormClosedEventArgs e) => Application.Exit();
@@ -55,12 +94,13 @@ namespace Caixa_Central
             string valorAssinaturaText = await GetValorPlano();
             decimal valorAssinatura = decimal.Parse(valorAssinaturaText, CultureInfo.InvariantCulture);
             string formattedValue = valorAssinatura.ToString("C2", CultureInfo.CreateSpecificCulture("pt-BR"));
-
             labelCadastroAssinantesValorTotal.Text = formattedValue;
+
             //TODO: Ir na api para preencher o saldo de persycoins
             // ----
-            labelCadastroAssinantesSaldoPersyCoins.Text = "R$ 0,00";
             decimal saldoPersyCoins = 0.0M;
+            formattedValue = saldoPersyCoins.ToString("C2", CultureInfo.CreateSpecificCulture("pt-BR"));
+            labelCadastroAssinantesSaldoPersyCoins.Text = formattedValue;
             currencyTextBoxCadastroAssinantePersyCoins.MaxValue = saldoPersyCoins;
 
             //Seta o valor de todo mundo para no máximo o valor da assinatura
@@ -226,15 +266,96 @@ namespace Caixa_Central
             CalcularTotal();
         }
 
-        private void TabPageClientes_Enter(object sender, EventArgs e)
+        private void TabPageClientes_EnterAsync(object sender, EventArgs e)
         {
-            //TODO: Atualizar a lista de clientes
+            // Atualizar a lista de clientes q são assinantes
+            GetAllAssinantes();
+
+
+
             // atualizar o array de mesas ocupadas
+        }
+
+        private async void GetAllAssinantes()
+        {
+            //Ir na api para preencher o valor do plano escolhido           
+            string responseContent;
+
+            //Preencher a URL com o plano escolhido
+            string url = "http://h6sdpd5uhc.execute-api.us-east-1.amazonaws.com/assinatura/assinaturas";
+            try
+            {
+                // Send GET request to API
+                HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                // Check if response is successful
+                response.EnsureSuccessStatusCode();
+
+                // Read response content
+                responseContent = await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here
+                responseContent = "error";
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
+            // Define a class to represent each object in the JSON array
+
+            // Deserialize the JSON string into a list of Pessoa objects
+            if (responseContent != null)
+            {
+                assinantes = JsonConvert.DeserializeObject<List<Assinante>>(responseContent);
+            }
         }
 
         private void ButtonCliente1_Click(object sender, EventArgs e)
         {
-            groupBoxClientesNovaMesa.Visible = true;
+            IniciarMesa("1");
+        }
+
+        private void IniciarMesa(string nrMesa)
+        {
+            DialogResult result = MessageBox.Show("Cliente é assinante?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // User clicked Yes
+                groupBoxClientesNovaMesa.Visible = false;
+            }
+            else
+            {
+                // User clicked No
+                groupBoxClientesNovaMesa.Visible = true;
+                labelClienteNrMesa.Text = nrMesa;
+            }
+        }
+
+        private void CheckBoxClienteUsarPassaporteAssinante_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxClienteUsarPassaporteAssinante.Checked)
+            {
+                //Vai na Api Pegar a lista de assinantes
+                if (assinantes is not null)
+                {
+                    List<string> nomesESobrenomes = assinantes.Select(p => $"{p.Nome} {p.Sobrenome}").ToList();
+                    comboBoxClienteNovaMesaNomeAssinante.DataSource = nomesESobrenomes;
+                    comboBoxClienteNovaMesaNomeAssinante.Refresh();
+                    comboBoxClienteNovaMesaNomeAssinante.Visible = true;
+                }
+            }
+            else
+            {
+                comboBoxClienteNovaMesaNomeAssinante.Visible = false;
+            }
+        }
+
+        private void ButtonClientesAdd_Click(object sender, EventArgs e)
+        {
+            //Gravar que a mesa está ocupada
+            int nrMesa = int.Parse(labelClienteNrMesa.Text);
+
 
         }
     }

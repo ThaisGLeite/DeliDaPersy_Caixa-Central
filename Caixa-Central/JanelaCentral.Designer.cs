@@ -35,6 +35,12 @@
             groupBox1 = new GroupBox();
             groupBoxClientes = new GroupBox();
             groupBoxClientesNovaMesa = new GroupBox();
+            labelClienteNrMesa = new Label();
+            buttonClientesAdd = new Button();
+            comboBoxClienteNovaMesaNomeAssinante = new ComboBox();
+            checkBoxClienteUsarPassaporteAssinante = new CheckBox();
+            textBoxClientesNovoNome = new TextBox();
+            label13 = new Label();
             buttonCliente25 = new Button();
             buttonCliente21 = new Button();
             buttonCliente24 = new Button();
@@ -103,6 +109,7 @@
             tabControl1.SuspendLayout();
             tabPageClientes.SuspendLayout();
             groupBoxClientes.SuspendLayout();
+            groupBoxClientesNovaMesa.SuspendLayout();
             CadastroAssinantes.SuspendLayout();
             groupBoxCadastroAssinantesPagar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currencyTextBoxCadastroAssinantePicpay).BeginInit();
@@ -137,7 +144,7 @@
             tabPageClientes.Size = new Size(1776, 774);
             tabPageClientes.TabIndex = 0;
             tabPageClientes.Text = "Clientes";
-            tabPageClientes.Enter += TabPageClientes_Enter;
+            tabPageClientes.Enter += TabPageClientes_EnterAsync;
             // 
             // groupBox1
             // 
@@ -186,6 +193,13 @@
             // 
             // groupBoxClientesNovaMesa
             // 
+            groupBoxClientesNovaMesa.BackColor = Color.MediumAquamarine;
+            groupBoxClientesNovaMesa.Controls.Add(labelClienteNrMesa);
+            groupBoxClientesNovaMesa.Controls.Add(buttonClientesAdd);
+            groupBoxClientesNovaMesa.Controls.Add(comboBoxClienteNovaMesaNomeAssinante);
+            groupBoxClientesNovaMesa.Controls.Add(checkBoxClienteUsarPassaporteAssinante);
+            groupBoxClientesNovaMesa.Controls.Add(textBoxClientesNovoNome);
+            groupBoxClientesNovaMesa.Controls.Add(label13);
             groupBoxClientesNovaMesa.Location = new Point(20, 640);
             groupBoxClientesNovaMesa.Name = "groupBoxClientesNovaMesa";
             groupBoxClientesNovaMesa.Size = new Size(830, 116);
@@ -193,6 +207,66 @@
             groupBoxClientesNovaMesa.TabStop = false;
             groupBoxClientesNovaMesa.Text = "Abrir uma nova Mesa";
             groupBoxClientesNovaMesa.Visible = false;
+            // 
+            // labelClienteNrMesa
+            // 
+            labelClienteNrMesa.AutoSize = true;
+            labelClienteNrMesa.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelClienteNrMesa.Location = new Point(15, 79);
+            labelClienteNrMesa.Name = "labelClienteNrMesa";
+            labelClienteNrMesa.Size = new Size(67, 23);
+            labelClienteNrMesa.TabIndex = 48;
+            labelClienteNrMesa.Text = "Nome:";
+            // 
+            // buttonClientesAdd
+            // 
+            buttonClientesAdd.Font = new Font("Lato", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonClientesAdd.Location = new Point(307, 23);
+            buttonClientesAdd.Name = "buttonClientesAdd";
+            buttonClientesAdd.Size = new Size(142, 30);
+            buttonClientesAdd.TabIndex = 47;
+            buttonClientesAdd.Text = "Adicionar";
+            buttonClientesAdd.UseVisualStyleBackColor = true;
+            buttonClientesAdd.Click += ButtonClientesAdd_Click;
+            // 
+            // comboBoxClienteNovaMesaNomeAssinante
+            // 
+            comboBoxClienteNovaMesaNomeAssinante.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxClienteNovaMesaNomeAssinante.FormattingEnabled = true;
+            comboBoxClienteNovaMesaNomeAssinante.Location = new Point(88, 79);
+            comboBoxClienteNovaMesaNomeAssinante.Name = "comboBoxClienteNovaMesaNomeAssinante";
+            comboBoxClienteNovaMesaNomeAssinante.Size = new Size(200, 31);
+            comboBoxClienteNovaMesaNomeAssinante.TabIndex = 14;
+            comboBoxClienteNovaMesaNomeAssinante.Visible = false;
+            // 
+            // checkBoxClienteUsarPassaporteAssinante
+            // 
+            checkBoxClienteUsarPassaporteAssinante.AutoSize = true;
+            checkBoxClienteUsarPassaporteAssinante.Location = new Point(88, 59);
+            checkBoxClienteUsarPassaporteAssinante.Name = "checkBoxClienteUsarPassaporteAssinante";
+            checkBoxClienteUsarPassaporteAssinante.Size = new Size(213, 19);
+            checkBoxClienteUsarPassaporteAssinante.TabIndex = 13;
+            checkBoxClienteUsarPassaporteAssinante.Text = "Usar o passaporte de um assinante?";
+            checkBoxClienteUsarPassaporteAssinante.UseVisualStyleBackColor = true;
+            checkBoxClienteUsarPassaporteAssinante.CheckedChanged += CheckBoxClienteUsarPassaporteAssinante_CheckedChanged;
+            // 
+            // textBoxClientesNovoNome
+            // 
+            textBoxClientesNovoNome.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxClientesNovoNome.Location = new Point(88, 23);
+            textBoxClientesNovoNome.Name = "textBoxClientesNovoNome";
+            textBoxClientesNovoNome.Size = new Size(200, 30);
+            textBoxClientesNovoNome.TabIndex = 3;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(15, 26);
+            label13.Name = "label13";
+            label13.Size = new Size(67, 23);
+            label13.TabIndex = 2;
+            label13.Text = "Nome:";
             // 
             // buttonCliente25
             // 
@@ -928,6 +1002,8 @@
             tabControl1.ResumeLayout(false);
             tabPageClientes.ResumeLayout(false);
             groupBoxClientes.ResumeLayout(false);
+            groupBoxClientesNovaMesa.ResumeLayout(false);
+            groupBoxClientesNovaMesa.PerformLayout();
             CadastroAssinantes.ResumeLayout(false);
             CadastroAssinantes.PerformLayout();
             groupBoxCadastroAssinantesPagar.ResumeLayout(false);
@@ -1017,5 +1093,11 @@
         private Button buttonCliente3;
         private Button buttonCliente2;
         private GroupBox groupBoxClientesNovaMesa;
+        private TextBox textBoxClientesNovoNome;
+        private Label label13;
+        private CheckBox checkBoxClienteUsarPassaporteAssinante;
+        private ComboBox comboBoxClienteNovaMesaNomeAssinante;
+        private Button buttonClientesAdd;
+        private Label labelClienteNrMesa;
     }
 }
