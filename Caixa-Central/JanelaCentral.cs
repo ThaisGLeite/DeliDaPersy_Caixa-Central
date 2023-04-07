@@ -39,7 +39,6 @@ namespace Caixa_Central
             }
             catch (Exception ex)
             {
-                // Handle exceptions here
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 return;
             }
@@ -53,7 +52,8 @@ namespace Caixa_Central
                         foundButton.BackColor = Color.Green;
                         foundButton.Text = mesa.Cliente;
                     }
-                } 
+                    mesa.Ocupada = true;
+                }
             }
         }
 
@@ -310,9 +310,14 @@ namespace Caixa_Central
             }
         }
 
-        private void ButtonCliente1_Click(object sender, EventArgs e)
+        private void ButtonCliente_Click(object sender, EventArgs e)
         {
-            IniciarMesa("1");
+            if (sender is Button clickedButton)
+            {
+                string buttonName = clickedButton.Name; // Get the name of the clicked button
+                string nrMesa = buttonName[^2..]; // Get the number of the clicked button
+                IniciarMesa(nrMesa);
+            }
         }
 
         private void IniciarMesa(string nrMesa)
@@ -351,12 +356,19 @@ namespace Caixa_Central
             }
         }
 
-        private void ButtonClientesAdd_Click(object sender, EventArgs e)
+        private async void ButtonClientesAdd_ClickAsync(object sender, EventArgs e)
         {
             //Gravar que a mesa está ocupada
-            int nrMesa = int.Parse(labelClienteNrMesa.Text);
+            string nrMesa = labelClienteNrMesa.Text;
+            Mesa mesa = new(nrMesa, textBoxClientesNovoNome.Text);
 
-
+            var httpClient = new HttpClient();
+            var json = JsonConvert.SerializeObject(mesa);
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            await httpClient.PutAsync("https://rr2fat3qw6.execute-api.us-east-1.amazonaws.com/api-mesas/mesa", content);
+            MessageBox.Show("Mesa " + nrMesa + " iniciada com sucesso!");
+            GetAllMesasAsync();
+            groupBoxClientesMesaAdd.Visible = true;
         }
     }
 }

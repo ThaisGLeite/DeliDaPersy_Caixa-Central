@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaCentral));
             tabControl1 = new TabControl();
             tabPageClientes = new TabPage();
-            groupBox1 = new GroupBox();
+            groupBoxClientesMesaAdd = new GroupBox();
             groupBoxClientes = new GroupBox();
             groupBoxClientesNovaMesa = new GroupBox();
             labelClienteNrMesa = new Label();
@@ -57,15 +57,15 @@
             buttonCliente13 = new Button();
             buttonCliente12 = new Button();
             buttonCliente10 = new Button();
-            buttonCliente6 = new Button();
-            buttonCliente9 = new Button();
-            buttonCliente8 = new Button();
-            buttonCliente7 = new Button();
-            buttonCliente5 = new Button();
-            buttonCliente1 = new Button();
-            buttonCliente4 = new Button();
-            buttonCliente3 = new Button();
-            buttonCliente2 = new Button();
+            buttonCliente06 = new Button();
+            buttonCliente09 = new Button();
+            buttonCliente08 = new Button();
+            buttonCliente07 = new Button();
+            buttonCliente05 = new Button();
+            buttonCliente01 = new Button();
+            buttonCliente04 = new Button();
+            buttonCliente03 = new Button();
+            buttonCliente02 = new Button();
             tabPageCaixa = new TabPage();
             CadastroAssinantes = new TabPage();
             calculatorControl1 = new Syncfusion.Windows.Forms.Tools.CalculatorControl();
@@ -136,7 +136,7 @@
             // tabPageClientes
             // 
             tabPageClientes.BackColor = Color.DarkGray;
-            tabPageClientes.Controls.Add(groupBox1);
+            tabPageClientes.Controls.Add(groupBoxClientesMesaAdd);
             tabPageClientes.Controls.Add(groupBoxClientes);
             tabPageClientes.Location = new Point(4, 24);
             tabPageClientes.Name = "tabPageClientes";
@@ -146,14 +146,15 @@
             tabPageClientes.Text = "Clientes";
             tabPageClientes.Enter += TabPageClientes_EnterAsync;
             // 
-            // groupBox1
+            // groupBoxClientesMesaAdd
             // 
-            groupBox1.Location = new Point(901, 6);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(865, 762);
-            groupBox1.TabIndex = 22;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBoxClientesMesaAdd.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBoxClientesMesaAdd.Location = new Point(901, 6);
+            groupBoxClientesMesaAdd.Name = "groupBoxClientesMesaAdd";
+            groupBoxClientesMesaAdd.Size = new Size(865, 762);
+            groupBoxClientesMesaAdd.TabIndex = 22;
+            groupBoxClientesMesaAdd.TabStop = false;
+            groupBoxClientesMesaAdd.Text = "NOME CLIENTE";
             // 
             // groupBoxClientes
             // 
@@ -175,15 +176,15 @@
             groupBoxClientes.Controls.Add(buttonCliente13);
             groupBoxClientes.Controls.Add(buttonCliente12);
             groupBoxClientes.Controls.Add(buttonCliente10);
-            groupBoxClientes.Controls.Add(buttonCliente6);
-            groupBoxClientes.Controls.Add(buttonCliente9);
-            groupBoxClientes.Controls.Add(buttonCliente8);
-            groupBoxClientes.Controls.Add(buttonCliente7);
-            groupBoxClientes.Controls.Add(buttonCliente5);
-            groupBoxClientes.Controls.Add(buttonCliente1);
-            groupBoxClientes.Controls.Add(buttonCliente4);
-            groupBoxClientes.Controls.Add(buttonCliente3);
-            groupBoxClientes.Controls.Add(buttonCliente2);
+            groupBoxClientes.Controls.Add(buttonCliente06);
+            groupBoxClientes.Controls.Add(buttonCliente09);
+            groupBoxClientes.Controls.Add(buttonCliente08);
+            groupBoxClientes.Controls.Add(buttonCliente07);
+            groupBoxClientes.Controls.Add(buttonCliente05);
+            groupBoxClientes.Controls.Add(buttonCliente01);
+            groupBoxClientes.Controls.Add(buttonCliente04);
+            groupBoxClientes.Controls.Add(buttonCliente03);
+            groupBoxClientes.Controls.Add(buttonCliente02);
             groupBoxClientes.Location = new Point(6, 6);
             groupBoxClientes.Name = "groupBoxClientes";
             groupBoxClientes.Size = new Size(876, 762);
@@ -227,7 +228,7 @@
             buttonClientesAdd.TabIndex = 47;
             buttonClientesAdd.Text = "Adicionar";
             buttonClientesAdd.UseVisualStyleBackColor = true;
-            buttonClientesAdd.Click += ButtonClientesAdd_Click;
+            buttonClientesAdd.Click += ButtonClientesAdd_ClickAsync;
             // 
             // comboBoxClienteNovaMesaNomeAssinante
             // 
@@ -277,6 +278,7 @@
             buttonCliente25.TabIndex = 45;
             buttonCliente25.Text = "25";
             buttonCliente25.UseVisualStyleBackColor = true;
+            buttonCliente25.Click += ButtonCliente_Click;
             // 
             // buttonCliente21
             // 
@@ -287,6 +289,7 @@
             buttonCliente21.TabIndex = 41;
             buttonCliente21.Text = "21";
             buttonCliente21.UseVisualStyleBackColor = true;
+            buttonCliente21.Click += ButtonCliente_Click;
             // 
             // buttonCliente24
             // 
@@ -297,6 +300,7 @@
             buttonCliente24.TabIndex = 44;
             buttonCliente24.Text = "24";
             buttonCliente24.UseVisualStyleBackColor = true;
+            buttonCliente24.Click += ButtonCliente_Click;
             // 
             // buttonCliente23
             // 
@@ -307,6 +311,7 @@
             buttonCliente23.TabIndex = 43;
             buttonCliente23.Text = "23";
             buttonCliente23.UseVisualStyleBackColor = true;
+            buttonCliente23.Click += ButtonCliente_Click;
             // 
             // buttonCliente22
             // 
@@ -317,6 +322,7 @@
             buttonCliente22.TabIndex = 42;
             buttonCliente22.Text = "22";
             buttonCliente22.UseVisualStyleBackColor = true;
+            buttonCliente22.Click += ButtonCliente_Click;
             // 
             // buttonCliente20
             // 
@@ -327,6 +333,7 @@
             buttonCliente20.TabIndex = 40;
             buttonCliente20.Text = "20";
             buttonCliente20.UseVisualStyleBackColor = true;
+            buttonCliente20.Click += ButtonCliente_Click;
             // 
             // buttonCliente16
             // 
@@ -337,6 +344,7 @@
             buttonCliente16.TabIndex = 36;
             buttonCliente16.Text = "16";
             buttonCliente16.UseVisualStyleBackColor = true;
+            buttonCliente16.Click += ButtonCliente_Click;
             // 
             // buttonCliente19
             // 
@@ -347,6 +355,7 @@
             buttonCliente19.TabIndex = 39;
             buttonCliente19.Text = "19";
             buttonCliente19.UseVisualStyleBackColor = true;
+            buttonCliente19.Click += ButtonCliente_Click;
             // 
             // buttonCliente18
             // 
@@ -357,6 +366,7 @@
             buttonCliente18.TabIndex = 38;
             buttonCliente18.Text = "18";
             buttonCliente18.UseVisualStyleBackColor = true;
+            buttonCliente18.Click += ButtonCliente_Click;
             // 
             // buttonCliente17
             // 
@@ -367,6 +377,7 @@
             buttonCliente17.TabIndex = 37;
             buttonCliente17.Text = "17";
             buttonCliente17.UseVisualStyleBackColor = true;
+            buttonCliente17.Click += ButtonCliente_Click;
             // 
             // buttonCliente15
             // 
@@ -377,6 +388,7 @@
             buttonCliente15.TabIndex = 35;
             buttonCliente15.Text = "15";
             buttonCliente15.UseVisualStyleBackColor = true;
+            buttonCliente15.Click += ButtonCliente_Click;
             // 
             // buttonCliente11
             // 
@@ -387,6 +399,7 @@
             buttonCliente11.TabIndex = 31;
             buttonCliente11.Text = "11";
             buttonCliente11.UseVisualStyleBackColor = true;
+            buttonCliente11.Click += ButtonCliente_Click;
             // 
             // buttonCliente14
             // 
@@ -397,6 +410,7 @@
             buttonCliente14.TabIndex = 34;
             buttonCliente14.Text = "14";
             buttonCliente14.UseVisualStyleBackColor = true;
+            buttonCliente14.Click += ButtonCliente_Click;
             // 
             // buttonCliente13
             // 
@@ -407,6 +421,7 @@
             buttonCliente13.TabIndex = 33;
             buttonCliente13.Text = "13";
             buttonCliente13.UseVisualStyleBackColor = true;
+            buttonCliente13.Click += ButtonCliente_Click;
             // 
             // buttonCliente12
             // 
@@ -417,6 +432,7 @@
             buttonCliente12.TabIndex = 32;
             buttonCliente12.Text = "12";
             buttonCliente12.UseVisualStyleBackColor = true;
+            buttonCliente12.Click += ButtonCliente_Click;
             // 
             // buttonCliente10
             // 
@@ -427,97 +443,106 @@
             buttonCliente10.TabIndex = 30;
             buttonCliente10.Text = "10";
             buttonCliente10.UseVisualStyleBackColor = true;
+            buttonCliente10.Click += ButtonCliente_Click;
             // 
-            // buttonCliente6
+            // buttonCliente06
             // 
-            buttonCliente6.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente6.Location = new Point(20, 147);
-            buttonCliente6.Name = "buttonCliente6";
-            buttonCliente6.Size = new Size(142, 95);
-            buttonCliente6.TabIndex = 26;
-            buttonCliente6.Text = "6";
-            buttonCliente6.UseVisualStyleBackColor = true;
+            buttonCliente06.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente06.Location = new Point(20, 147);
+            buttonCliente06.Name = "buttonCliente06";
+            buttonCliente06.Size = new Size(142, 95);
+            buttonCliente06.TabIndex = 26;
+            buttonCliente06.Text = "6";
+            buttonCliente06.UseVisualStyleBackColor = true;
+            buttonCliente06.Click += ButtonCliente_Click;
             // 
-            // buttonCliente9
+            // buttonCliente09
             // 
-            buttonCliente9.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente9.Location = new Point(536, 147);
-            buttonCliente9.Name = "buttonCliente9";
-            buttonCliente9.Size = new Size(142, 95);
-            buttonCliente9.TabIndex = 29;
-            buttonCliente9.Text = "9";
-            buttonCliente9.UseVisualStyleBackColor = true;
+            buttonCliente09.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente09.Location = new Point(536, 147);
+            buttonCliente09.Name = "buttonCliente09";
+            buttonCliente09.Size = new Size(142, 95);
+            buttonCliente09.TabIndex = 29;
+            buttonCliente09.Text = "9";
+            buttonCliente09.UseVisualStyleBackColor = true;
+            buttonCliente09.Click += ButtonCliente_Click;
             // 
-            // buttonCliente8
+            // buttonCliente08
             // 
-            buttonCliente8.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente8.Location = new Point(364, 147);
-            buttonCliente8.Name = "buttonCliente8";
-            buttonCliente8.Size = new Size(142, 95);
-            buttonCliente8.TabIndex = 28;
-            buttonCliente8.Text = "8";
-            buttonCliente8.UseVisualStyleBackColor = true;
+            buttonCliente08.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente08.Location = new Point(364, 147);
+            buttonCliente08.Name = "buttonCliente08";
+            buttonCliente08.Size = new Size(142, 95);
+            buttonCliente08.TabIndex = 28;
+            buttonCliente08.Text = "8";
+            buttonCliente08.UseVisualStyleBackColor = true;
+            buttonCliente08.Click += ButtonCliente_Click;
             // 
-            // buttonCliente7
+            // buttonCliente07
             // 
-            buttonCliente7.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente7.Location = new Point(192, 147);
-            buttonCliente7.Name = "buttonCliente7";
-            buttonCliente7.Size = new Size(142, 95);
-            buttonCliente7.TabIndex = 27;
-            buttonCliente7.Text = "7";
-            buttonCliente7.UseVisualStyleBackColor = true;
+            buttonCliente07.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente07.Location = new Point(192, 147);
+            buttonCliente07.Name = "buttonCliente07";
+            buttonCliente07.Size = new Size(142, 95);
+            buttonCliente07.TabIndex = 27;
+            buttonCliente07.Text = "7";
+            buttonCliente07.UseVisualStyleBackColor = true;
+            buttonCliente07.Click += ButtonCliente_Click;
             // 
-            // buttonCliente5
+            // buttonCliente05
             // 
-            buttonCliente5.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente5.Location = new Point(708, 27);
-            buttonCliente5.Name = "buttonCliente5";
-            buttonCliente5.Size = new Size(142, 95);
-            buttonCliente5.TabIndex = 25;
-            buttonCliente5.Text = "5";
-            buttonCliente5.UseVisualStyleBackColor = true;
+            buttonCliente05.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente05.Location = new Point(708, 27);
+            buttonCliente05.Name = "buttonCliente05";
+            buttonCliente05.Size = new Size(142, 95);
+            buttonCliente05.TabIndex = 25;
+            buttonCliente05.Text = "5";
+            buttonCliente05.UseVisualStyleBackColor = true;
+            buttonCliente05.Click += ButtonCliente_Click;
             // 
-            // buttonCliente1
+            // buttonCliente01
             // 
-            buttonCliente1.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente1.Location = new Point(20, 27);
-            buttonCliente1.Name = "buttonCliente1";
-            buttonCliente1.Size = new Size(142, 95);
-            buttonCliente1.TabIndex = 0;
-            buttonCliente1.Text = "1";
-            buttonCliente1.UseVisualStyleBackColor = true;
-            buttonCliente1.Click += ButtonCliente1_Click;
+            buttonCliente01.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente01.Location = new Point(20, 22);
+            buttonCliente01.Name = "buttonCliente01";
+            buttonCliente01.Size = new Size(142, 95);
+            buttonCliente01.TabIndex = 0;
+            buttonCliente01.Text = "1";
+            buttonCliente01.UseVisualStyleBackColor = true;
+            buttonCliente01.Click += ButtonCliente_Click;
             // 
-            // buttonCliente4
+            // buttonCliente04
             // 
-            buttonCliente4.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente4.Location = new Point(536, 27);
-            buttonCliente4.Name = "buttonCliente4";
-            buttonCliente4.Size = new Size(142, 95);
-            buttonCliente4.TabIndex = 24;
-            buttonCliente4.Text = "4";
-            buttonCliente4.UseVisualStyleBackColor = true;
+            buttonCliente04.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente04.Location = new Point(536, 27);
+            buttonCliente04.Name = "buttonCliente04";
+            buttonCliente04.Size = new Size(142, 95);
+            buttonCliente04.TabIndex = 24;
+            buttonCliente04.Text = "4";
+            buttonCliente04.UseVisualStyleBackColor = true;
+            buttonCliente04.Click += ButtonCliente_Click;
             // 
-            // buttonCliente3
+            // buttonCliente03
             // 
-            buttonCliente3.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente3.Location = new Point(364, 27);
-            buttonCliente3.Name = "buttonCliente3";
-            buttonCliente3.Size = new Size(142, 95);
-            buttonCliente3.TabIndex = 23;
-            buttonCliente3.Text = "3";
-            buttonCliente3.UseVisualStyleBackColor = true;
+            buttonCliente03.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente03.Location = new Point(364, 27);
+            buttonCliente03.Name = "buttonCliente03";
+            buttonCliente03.Size = new Size(142, 95);
+            buttonCliente03.TabIndex = 23;
+            buttonCliente03.Text = "3";
+            buttonCliente03.UseVisualStyleBackColor = true;
+            buttonCliente03.Click += ButtonCliente_Click;
             // 
-            // buttonCliente2
+            // buttonCliente02
             // 
-            buttonCliente2.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente2.Location = new Point(192, 27);
-            buttonCliente2.Name = "buttonCliente2";
-            buttonCliente2.Size = new Size(142, 95);
-            buttonCliente2.TabIndex = 22;
-            buttonCliente2.Text = "2";
-            buttonCliente2.UseVisualStyleBackColor = true;
+            buttonCliente02.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente02.Location = new Point(192, 27);
+            buttonCliente02.Name = "buttonCliente02";
+            buttonCliente02.Size = new Size(142, 95);
+            buttonCliente02.TabIndex = 22;
+            buttonCliente02.Text = "2";
+            buttonCliente02.UseVisualStyleBackColor = true;
+            buttonCliente02.Click += ButtonCliente_Click;
             // 
             // tabPageCaixa
             // 
@@ -1066,7 +1091,7 @@
         private Label label11;
         private Syncfusion.Windows.Forms.Tools.CalculatorControl calculatorControl1;
         private CheckBox checkBoxCadastroAssinantesTrocoEmPersyCoins;
-        private GroupBox groupBox1;
+        private GroupBox groupBoxClientesMesaAdd;
         private Button buttonCliente25;
         private Button buttonCliente21;
         private Button buttonCliente24;
@@ -1083,15 +1108,15 @@
         private Button buttonCliente13;
         private Button buttonCliente12;
         private Button buttonCliente10;
-        private Button buttonCliente6;
-        private Button buttonCliente9;
-        private Button buttonCliente8;
-        private Button buttonCliente7;
-        private Button buttonCliente5;
-        private Button buttonCliente1;
-        private Button buttonCliente4;
-        private Button buttonCliente3;
-        private Button buttonCliente2;
+        private Button buttonCliente06;
+        private Button buttonCliente09;
+        private Button buttonCliente08;
+        private Button buttonCliente07;
+        private Button buttonCliente05;
+        private Button buttonCliente01;
+        private Button buttonCliente04;
+        private Button buttonCliente03;
+        private Button buttonCliente02;
         private GroupBox groupBoxClientesNovaMesa;
         private TextBox textBoxClientesNovoNome;
         private Label label13;
