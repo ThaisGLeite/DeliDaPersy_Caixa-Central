@@ -9,7 +9,7 @@ namespace Caixa_Central
         readonly Usuario usuario;
         private readonly HttpClient httpClient;
         List<Assinante>? assinantes;
-        List<Mesa>? mesasOcupadas;
+        List<Mesa> mesasOcupadas;
 
         public JanelaCentral(string nome)
         {
@@ -51,8 +51,18 @@ namespace Caixa_Central
                     {
                         foundButton.BackColor = Color.Green;
                         foundButton.Text = mesa.Cliente;
+                        mesa.Ocupada = true;
                     }
-                    mesa.Ocupada = true;
+                }
+                for (int i = 1; i < 26; i++)
+                {
+                    string nrMesa = i.ToString("D2");
+                    Mesa? mesa = mesasOcupadas.Find(x => x.Id == nrMesa);
+                    mesa ??= new Mesa(nrMesa, "")
+                    {
+                        Ocupada = false
+                    };
+                    mesasOcupadas.Add(mesa);
                 }
             }
         }
@@ -316,7 +326,15 @@ namespace Caixa_Central
             {
                 string buttonName = clickedButton.Name; // Get the name of the clicked button
                 string nrMesa = buttonName[^2..]; // Get the number of the clicked button
-                IniciarMesa(nrMesa);
+                if (mesasOcupadas.Find(x => x.Id == nrMesa).Ocupada)
+                {
+
+                }
+                else
+                {
+                    IniciarMesa(nrMesa);
+
+                }
             }
         }
 
@@ -369,6 +387,17 @@ namespace Caixa_Central
             MessageBox.Show("Mesa " + nrMesa + " iniciada com sucesso!");
             GetAllMesasAsync();
             groupBoxClientesMesaAdd.Visible = true;
+
+            if (!checkBoxClienteUsarPassaporteAssinante.Checked)
+            {
+                //Adicionar o pedido passaporte na lista de pedidos da mesa
+                Pedido pedido = new("Passaporte", 10);
+                pedido.AdicionarPedido(nrMesa);
+            }
+
+            groupBoxClientesNovaMesa.Visible = false;
+            textBoxClientesNovoNome.Text = string.Empty;
+            comboBoxClienteNovaMesaNomeAssinante.Text = string.Empty;
         }
     }
 }

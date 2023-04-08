@@ -106,8 +106,11 @@
             textBoxCadastroAssinantesNome = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            dataGridView1 = new DataGridView();
+            Nome = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPageClientes.SuspendLayout();
+            groupBoxClientesMesaAdd.SuspendLayout();
             groupBoxClientes.SuspendLayout();
             groupBoxClientesNovaMesa.SuspendLayout();
             CadastroAssinantes.SuspendLayout();
@@ -120,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)currencyTextBoxCadastroAssinantePersyCoins).BeginInit();
             groupBoxCadastroAssinantesTempoPlano.SuspendLayout();
             groupBoxCadastroAssinantesPlanoEscolhido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -130,7 +134,7 @@
             tabControl1.Location = new Point(2, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1784, 802);
+            tabControl1.Size = new Size(1400, 700);
             tabControl1.TabIndex = 0;
             // 
             // tabPageClientes
@@ -141,17 +145,18 @@
             tabPageClientes.Location = new Point(4, 24);
             tabPageClientes.Name = "tabPageClientes";
             tabPageClientes.Padding = new Padding(3);
-            tabPageClientes.Size = new Size(1776, 774);
+            tabPageClientes.Size = new Size(1392, 672);
             tabPageClientes.TabIndex = 0;
             tabPageClientes.Text = "Clientes";
             tabPageClientes.Enter += TabPageClientes_EnterAsync;
             // 
             // groupBoxClientesMesaAdd
             // 
-            groupBoxClientesMesaAdd.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBoxClientesMesaAdd.Location = new Point(901, 6);
+            groupBoxClientesMesaAdd.Controls.Add(dataGridView1);
+            groupBoxClientesMesaAdd.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBoxClientesMesaAdd.Location = new Point(884, 3);
             groupBoxClientesMesaAdd.Name = "groupBoxClientesMesaAdd";
-            groupBoxClientesMesaAdd.Size = new Size(865, 762);
+            groupBoxClientesMesaAdd.Size = new Size(656, 666);
             groupBoxClientesMesaAdd.TabIndex = 22;
             groupBoxClientesMesaAdd.TabStop = false;
             groupBoxClientesMesaAdd.Text = "NOME CLIENTE";
@@ -187,7 +192,7 @@
             groupBoxClientes.Controls.Add(buttonCliente02);
             groupBoxClientes.Location = new Point(6, 6);
             groupBoxClientes.Name = "groupBoxClientes";
-            groupBoxClientes.Size = new Size(876, 762);
+            groupBoxClientes.Size = new Size(872, 660);
             groupBoxClientes.TabIndex = 21;
             groupBoxClientes.TabStop = false;
             groupBoxClientes.Text = "Selecione o cliente";
@@ -201,7 +206,7 @@
             groupBoxClientesNovaMesa.Controls.Add(checkBoxClienteUsarPassaporteAssinante);
             groupBoxClientesNovaMesa.Controls.Add(textBoxClientesNovoNome);
             groupBoxClientesNovaMesa.Controls.Add(label13);
-            groupBoxClientesNovaMesa.Location = new Point(20, 640);
+            groupBoxClientesNovaMesa.Location = new Point(20, 510);
             groupBoxClientesNovaMesa.Name = "groupBoxClientesNovaMesa";
             groupBoxClientesNovaMesa.Size = new Size(830, 116);
             groupBoxClientesNovaMesa.TabIndex = 46;
@@ -212,16 +217,16 @@
             // labelClienteNrMesa
             // 
             labelClienteNrMesa.AutoSize = true;
-            labelClienteNrMesa.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelClienteNrMesa.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelClienteNrMesa.Location = new Point(15, 79);
             labelClienteNrMesa.Name = "labelClienteNrMesa";
-            labelClienteNrMesa.Size = new Size(67, 23);
+            labelClienteNrMesa.Size = new Size(67, 24);
             labelClienteNrMesa.TabIndex = 48;
             labelClienteNrMesa.Text = "Nome:";
             // 
             // buttonClientesAdd
             // 
-            buttonClientesAdd.Font = new Font("Lato", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonClientesAdd.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             buttonClientesAdd.Location = new Point(307, 23);
             buttonClientesAdd.Name = "buttonClientesAdd";
             buttonClientesAdd.Size = new Size(142, 30);
@@ -232,11 +237,11 @@
             // 
             // comboBoxClienteNovaMesaNomeAssinante
             // 
-            comboBoxClienteNovaMesaNomeAssinante.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxClienteNovaMesaNomeAssinante.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxClienteNovaMesaNomeAssinante.FormattingEnabled = true;
             comboBoxClienteNovaMesaNomeAssinante.Location = new Point(88, 79);
             comboBoxClienteNovaMesaNomeAssinante.Name = "comboBoxClienteNovaMesaNomeAssinante";
-            comboBoxClienteNovaMesaNomeAssinante.Size = new Size(200, 31);
+            comboBoxClienteNovaMesaNomeAssinante.Size = new Size(200, 32);
             comboBoxClienteNovaMesaNomeAssinante.TabIndex = 14;
             comboBoxClienteNovaMesaNomeAssinante.Visible = false;
             // 
@@ -253,28 +258,28 @@
             // 
             // textBoxClientesNovoNome
             // 
-            textBoxClientesNovoNome.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxClientesNovoNome.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxClientesNovoNome.Location = new Point(88, 23);
             textBoxClientesNovoNome.Name = "textBoxClientesNovoNome";
-            textBoxClientesNovoNome.Size = new Size(200, 30);
+            textBoxClientesNovoNome.Size = new Size(200, 29);
             textBoxClientesNovoNome.TabIndex = 3;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(15, 26);
             label13.Name = "label13";
-            label13.Size = new Size(67, 23);
+            label13.Size = new Size(67, 24);
             label13.TabIndex = 2;
             label13.Text = "Nome:";
             // 
             // buttonCliente25
             // 
-            buttonCliente25.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente25.Location = new Point(708, 525);
+            buttonCliente25.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente25.Location = new Point(708, 391);
             buttonCliente25.Name = "buttonCliente25";
-            buttonCliente25.Size = new Size(142, 95);
+            buttonCliente25.Size = new Size(142, 79);
             buttonCliente25.TabIndex = 45;
             buttonCliente25.Text = "25";
             buttonCliente25.UseVisualStyleBackColor = true;
@@ -282,10 +287,10 @@
             // 
             // buttonCliente21
             // 
-            buttonCliente21.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente21.Location = new Point(20, 525);
+            buttonCliente21.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente21.Location = new Point(20, 391);
             buttonCliente21.Name = "buttonCliente21";
-            buttonCliente21.Size = new Size(142, 95);
+            buttonCliente21.Size = new Size(142, 79);
             buttonCliente21.TabIndex = 41;
             buttonCliente21.Text = "21";
             buttonCliente21.UseVisualStyleBackColor = true;
@@ -293,10 +298,10 @@
             // 
             // buttonCliente24
             // 
-            buttonCliente24.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente24.Location = new Point(536, 525);
+            buttonCliente24.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente24.Location = new Point(536, 391);
             buttonCliente24.Name = "buttonCliente24";
-            buttonCliente24.Size = new Size(142, 95);
+            buttonCliente24.Size = new Size(142, 79);
             buttonCliente24.TabIndex = 44;
             buttonCliente24.Text = "24";
             buttonCliente24.UseVisualStyleBackColor = true;
@@ -304,10 +309,10 @@
             // 
             // buttonCliente23
             // 
-            buttonCliente23.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente23.Location = new Point(364, 525);
+            buttonCliente23.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente23.Location = new Point(364, 391);
             buttonCliente23.Name = "buttonCliente23";
-            buttonCliente23.Size = new Size(142, 95);
+            buttonCliente23.Size = new Size(142, 79);
             buttonCliente23.TabIndex = 43;
             buttonCliente23.Text = "23";
             buttonCliente23.UseVisualStyleBackColor = true;
@@ -315,10 +320,10 @@
             // 
             // buttonCliente22
             // 
-            buttonCliente22.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente22.Location = new Point(192, 525);
+            buttonCliente22.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente22.Location = new Point(192, 391);
             buttonCliente22.Name = "buttonCliente22";
-            buttonCliente22.Size = new Size(142, 95);
+            buttonCliente22.Size = new Size(142, 79);
             buttonCliente22.TabIndex = 42;
             buttonCliente22.Text = "22";
             buttonCliente22.UseVisualStyleBackColor = true;
@@ -326,10 +331,10 @@
             // 
             // buttonCliente20
             // 
-            buttonCliente20.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente20.Location = new Point(708, 398);
+            buttonCliente20.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente20.Location = new Point(708, 299);
             buttonCliente20.Name = "buttonCliente20";
-            buttonCliente20.Size = new Size(142, 95);
+            buttonCliente20.Size = new Size(142, 78);
             buttonCliente20.TabIndex = 40;
             buttonCliente20.Text = "20";
             buttonCliente20.UseVisualStyleBackColor = true;
@@ -337,10 +342,10 @@
             // 
             // buttonCliente16
             // 
-            buttonCliente16.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente16.Location = new Point(20, 398);
+            buttonCliente16.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente16.Location = new Point(20, 299);
             buttonCliente16.Name = "buttonCliente16";
-            buttonCliente16.Size = new Size(142, 95);
+            buttonCliente16.Size = new Size(142, 78);
             buttonCliente16.TabIndex = 36;
             buttonCliente16.Text = "16";
             buttonCliente16.UseVisualStyleBackColor = true;
@@ -348,10 +353,10 @@
             // 
             // buttonCliente19
             // 
-            buttonCliente19.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente19.Location = new Point(536, 398);
+            buttonCliente19.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente19.Location = new Point(536, 299);
             buttonCliente19.Name = "buttonCliente19";
-            buttonCliente19.Size = new Size(142, 95);
+            buttonCliente19.Size = new Size(142, 78);
             buttonCliente19.TabIndex = 39;
             buttonCliente19.Text = "19";
             buttonCliente19.UseVisualStyleBackColor = true;
@@ -359,10 +364,10 @@
             // 
             // buttonCliente18
             // 
-            buttonCliente18.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente18.Location = new Point(364, 398);
+            buttonCliente18.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente18.Location = new Point(364, 299);
             buttonCliente18.Name = "buttonCliente18";
-            buttonCliente18.Size = new Size(142, 95);
+            buttonCliente18.Size = new Size(142, 78);
             buttonCliente18.TabIndex = 38;
             buttonCliente18.Text = "18";
             buttonCliente18.UseVisualStyleBackColor = true;
@@ -370,10 +375,10 @@
             // 
             // buttonCliente17
             // 
-            buttonCliente17.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente17.Location = new Point(192, 398);
+            buttonCliente17.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente17.Location = new Point(192, 299);
             buttonCliente17.Name = "buttonCliente17";
-            buttonCliente17.Size = new Size(142, 95);
+            buttonCliente17.Size = new Size(142, 78);
             buttonCliente17.TabIndex = 37;
             buttonCliente17.Text = "17";
             buttonCliente17.UseVisualStyleBackColor = true;
@@ -381,10 +386,10 @@
             // 
             // buttonCliente15
             // 
-            buttonCliente15.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente15.Location = new Point(708, 272);
+            buttonCliente15.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente15.Location = new Point(708, 208);
             buttonCliente15.Name = "buttonCliente15";
-            buttonCliente15.Size = new Size(142, 95);
+            buttonCliente15.Size = new Size(142, 78);
             buttonCliente15.TabIndex = 35;
             buttonCliente15.Text = "15";
             buttonCliente15.UseVisualStyleBackColor = true;
@@ -392,10 +397,10 @@
             // 
             // buttonCliente11
             // 
-            buttonCliente11.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente11.Location = new Point(20, 272);
+            buttonCliente11.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente11.Location = new Point(20, 208);
             buttonCliente11.Name = "buttonCliente11";
-            buttonCliente11.Size = new Size(142, 95);
+            buttonCliente11.Size = new Size(142, 78);
             buttonCliente11.TabIndex = 31;
             buttonCliente11.Text = "11";
             buttonCliente11.UseVisualStyleBackColor = true;
@@ -403,10 +408,10 @@
             // 
             // buttonCliente14
             // 
-            buttonCliente14.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente14.Location = new Point(536, 272);
+            buttonCliente14.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente14.Location = new Point(536, 208);
             buttonCliente14.Name = "buttonCliente14";
-            buttonCliente14.Size = new Size(142, 95);
+            buttonCliente14.Size = new Size(142, 78);
             buttonCliente14.TabIndex = 34;
             buttonCliente14.Text = "14";
             buttonCliente14.UseVisualStyleBackColor = true;
@@ -414,10 +419,10 @@
             // 
             // buttonCliente13
             // 
-            buttonCliente13.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente13.Location = new Point(364, 272);
+            buttonCliente13.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente13.Location = new Point(364, 208);
             buttonCliente13.Name = "buttonCliente13";
-            buttonCliente13.Size = new Size(142, 95);
+            buttonCliente13.Size = new Size(142, 78);
             buttonCliente13.TabIndex = 33;
             buttonCliente13.Text = "13";
             buttonCliente13.UseVisualStyleBackColor = true;
@@ -425,10 +430,10 @@
             // 
             // buttonCliente12
             // 
-            buttonCliente12.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente12.Location = new Point(192, 272);
+            buttonCliente12.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente12.Location = new Point(192, 208);
             buttonCliente12.Name = "buttonCliente12";
-            buttonCliente12.Size = new Size(142, 95);
+            buttonCliente12.Size = new Size(142, 78);
             buttonCliente12.TabIndex = 32;
             buttonCliente12.Text = "12";
             buttonCliente12.UseVisualStyleBackColor = true;
@@ -436,10 +441,10 @@
             // 
             // buttonCliente10
             // 
-            buttonCliente10.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente10.Location = new Point(708, 147);
+            buttonCliente10.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente10.Location = new Point(708, 118);
             buttonCliente10.Name = "buttonCliente10";
-            buttonCliente10.Size = new Size(142, 95);
+            buttonCliente10.Size = new Size(142, 78);
             buttonCliente10.TabIndex = 30;
             buttonCliente10.Text = "10";
             buttonCliente10.UseVisualStyleBackColor = true;
@@ -447,10 +452,10 @@
             // 
             // buttonCliente06
             // 
-            buttonCliente06.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente06.Location = new Point(20, 147);
+            buttonCliente06.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente06.Location = new Point(20, 118);
             buttonCliente06.Name = "buttonCliente06";
-            buttonCliente06.Size = new Size(142, 95);
+            buttonCliente06.Size = new Size(142, 78);
             buttonCliente06.TabIndex = 26;
             buttonCliente06.Text = "6";
             buttonCliente06.UseVisualStyleBackColor = true;
@@ -458,10 +463,10 @@
             // 
             // buttonCliente09
             // 
-            buttonCliente09.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente09.Location = new Point(536, 147);
+            buttonCliente09.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente09.Location = new Point(536, 118);
             buttonCliente09.Name = "buttonCliente09";
-            buttonCliente09.Size = new Size(142, 95);
+            buttonCliente09.Size = new Size(142, 78);
             buttonCliente09.TabIndex = 29;
             buttonCliente09.Text = "9";
             buttonCliente09.UseVisualStyleBackColor = true;
@@ -469,10 +474,10 @@
             // 
             // buttonCliente08
             // 
-            buttonCliente08.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente08.Location = new Point(364, 147);
+            buttonCliente08.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente08.Location = new Point(364, 118);
             buttonCliente08.Name = "buttonCliente08";
-            buttonCliente08.Size = new Size(142, 95);
+            buttonCliente08.Size = new Size(142, 78);
             buttonCliente08.TabIndex = 28;
             buttonCliente08.Text = "8";
             buttonCliente08.UseVisualStyleBackColor = true;
@@ -480,10 +485,10 @@
             // 
             // buttonCliente07
             // 
-            buttonCliente07.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente07.Location = new Point(192, 147);
+            buttonCliente07.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente07.Location = new Point(192, 118);
             buttonCliente07.Name = "buttonCliente07";
-            buttonCliente07.Size = new Size(142, 95);
+            buttonCliente07.Size = new Size(142, 78);
             buttonCliente07.TabIndex = 27;
             buttonCliente07.Text = "7";
             buttonCliente07.UseVisualStyleBackColor = true;
@@ -491,10 +496,10 @@
             // 
             // buttonCliente05
             // 
-            buttonCliente05.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente05.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCliente05.Location = new Point(708, 27);
             buttonCliente05.Name = "buttonCliente05";
-            buttonCliente05.Size = new Size(142, 95);
+            buttonCliente05.Size = new Size(142, 78);
             buttonCliente05.TabIndex = 25;
             buttonCliente05.Text = "5";
             buttonCliente05.UseVisualStyleBackColor = true;
@@ -502,10 +507,10 @@
             // 
             // buttonCliente01
             // 
-            buttonCliente01.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente01.Location = new Point(20, 22);
+            buttonCliente01.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente01.Location = new Point(20, 27);
             buttonCliente01.Name = "buttonCliente01";
-            buttonCliente01.Size = new Size(142, 95);
+            buttonCliente01.Size = new Size(142, 78);
             buttonCliente01.TabIndex = 0;
             buttonCliente01.Text = "1";
             buttonCliente01.UseVisualStyleBackColor = true;
@@ -513,10 +518,10 @@
             // 
             // buttonCliente04
             // 
-            buttonCliente04.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente04.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCliente04.Location = new Point(536, 27);
             buttonCliente04.Name = "buttonCliente04";
-            buttonCliente04.Size = new Size(142, 95);
+            buttonCliente04.Size = new Size(142, 78);
             buttonCliente04.TabIndex = 24;
             buttonCliente04.Text = "4";
             buttonCliente04.UseVisualStyleBackColor = true;
@@ -524,10 +529,10 @@
             // 
             // buttonCliente03
             // 
-            buttonCliente03.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente03.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCliente03.Location = new Point(364, 27);
             buttonCliente03.Name = "buttonCliente03";
-            buttonCliente03.Size = new Size(142, 95);
+            buttonCliente03.Size = new Size(142, 78);
             buttonCliente03.TabIndex = 23;
             buttonCliente03.Text = "3";
             buttonCliente03.UseVisualStyleBackColor = true;
@@ -535,10 +540,10 @@
             // 
             // buttonCliente02
             // 
-            buttonCliente02.Font = new Font("Lato", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCliente02.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCliente02.Location = new Point(192, 27);
             buttonCliente02.Name = "buttonCliente02";
-            buttonCliente02.Size = new Size(142, 95);
+            buttonCliente02.Size = new Size(142, 78);
             buttonCliente02.TabIndex = 22;
             buttonCliente02.Text = "2";
             buttonCliente02.UseVisualStyleBackColor = true;
@@ -550,7 +555,7 @@
             tabPageCaixa.Location = new Point(4, 24);
             tabPageCaixa.Name = "tabPageCaixa";
             tabPageCaixa.Padding = new Padding(3);
-            tabPageCaixa.Size = new Size(1776, 774);
+            tabPageCaixa.Size = new Size(1392, 672);
             tabPageCaixa.TabIndex = 1;
             tabPageCaixa.Text = "Caixa";
             // 
@@ -571,7 +576,7 @@
             CadastroAssinantes.Location = new Point(4, 24);
             CadastroAssinantes.Name = "CadastroAssinantes";
             CadastroAssinantes.Padding = new Padding(3);
-            CadastroAssinantes.Size = new Size(1776, 774);
+            CadastroAssinantes.Size = new Size(1392, 672);
             CadastroAssinantes.TabIndex = 2;
             CadastroAssinantes.Text = "Cadastro Assinantes";
             // 
@@ -582,9 +587,9 @@
             calculatorControl1.BeforeTouchSize = new Size(408, 381);
             calculatorControl1.Culture = new System.Globalization.CultureInfo("pt-BR");
             calculatorControl1.DoubleValue = 0D;
-            calculatorControl1.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            calculatorControl1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             calculatorControl1.ForeColor = SystemColors.ControlText;
-            calculatorControl1.Location = new Point(1358, 324);
+            calculatorControl1.Location = new Point(964, 258);
             calculatorControl1.MetroColor = SystemColors.Control;
             calculatorControl1.Name = "calculatorControl1";
             calculatorControl1.RightToLeft = RightToLeft.No;
@@ -595,10 +600,10 @@
             // labelCadastroAssinantesValorTotal
             // 
             labelCadastroAssinantesValorTotal.AutoSize = true;
-            labelCadastroAssinantesValorTotal.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCadastroAssinantesValorTotal.Location = new Point(507, 43);
+            labelCadastroAssinantesValorTotal.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCadastroAssinantesValorTotal.Location = new Point(494, 194);
             labelCadastroAssinantesValorTotal.Name = "labelCadastroAssinantesValorTotal";
-            labelCadastroAssinantesValorTotal.Size = new Size(21, 23);
+            labelCadastroAssinantesValorTotal.Size = new Size(20, 24);
             labelCadastroAssinantesValorTotal.TabIndex = 10;
             labelCadastroAssinantesValorTotal.Text = "0";
             labelCadastroAssinantesValorTotal.Visible = false;
@@ -626,8 +631,8 @@
             groupBoxCadastroAssinantesPagar.Controls.Add(labelCadastroAssinantesSaldoPersyCoins);
             groupBoxCadastroAssinantesPagar.Controls.Add(label3);
             groupBoxCadastroAssinantesPagar.Controls.Add(currencyTextBoxCadastroAssinantePersyCoins);
-            groupBoxCadastroAssinantesPagar.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxCadastroAssinantesPagar.Location = new Point(336, 82);
+            groupBoxCadastroAssinantesPagar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBoxCadastroAssinantesPagar.Location = new Point(587, 16);
             groupBoxCadastroAssinantesPagar.Name = "groupBoxCadastroAssinantesPagar";
             groupBoxCadastroAssinantesPagar.Size = new Size(273, 623);
             groupBoxCadastroAssinantesPagar.TabIndex = 6;
@@ -640,7 +645,7 @@
             checkBoxCadastroAssinantesTrocoEmPersyCoins.AutoSize = true;
             checkBoxCadastroAssinantesTrocoEmPersyCoins.Location = new Point(7, 531);
             checkBoxCadastroAssinantesTrocoEmPersyCoins.Name = "checkBoxCadastroAssinantesTrocoEmPersyCoins";
-            checkBoxCadastroAssinantesTrocoEmPersyCoins.Size = new Size(210, 27);
+            checkBoxCadastroAssinantesTrocoEmPersyCoins.Size = new Size(216, 28);
             checkBoxCadastroAssinantesTrocoEmPersyCoins.TabIndex = 12;
             checkBoxCadastroAssinantesTrocoEmPersyCoins.Text = "Troco em Persy Coins";
             checkBoxCadastroAssinantesTrocoEmPersyCoins.UseVisualStyleBackColor = true;
@@ -648,56 +653,56 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(6, 495);
             label12.Name = "label12";
-            label12.Size = new Size(62, 23);
+            label12.Size = new Size(65, 24);
             label12.TabIndex = 25;
             label12.Text = "Troco:";
             // 
             // labelCadastroAssinantesTroco
             // 
             labelCadastroAssinantesTroco.AutoSize = true;
-            labelCadastroAssinantesTroco.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCadastroAssinantesTroco.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCadastroAssinantesTroco.Location = new Point(159, 495);
             labelCadastroAssinantesTroco.Name = "labelCadastroAssinantesTroco";
-            labelCadastroAssinantesTroco.Size = new Size(75, 23);
+            labelCadastroAssinantesTroco.Size = new Size(73, 24);
             labelCadastroAssinantesTroco.TabIndex = 24;
             labelCadastroAssinantesTroco.Text = "R$ 0,00";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label11.Location = new Point(6, 463);
             label11.Name = "label11";
-            label11.Size = new Size(101, 23);
+            label11.Size = new Size(105, 24);
             label11.TabIndex = 23;
             label11.Text = "Total Pago:";
             // 
             // labelCadastroAssinantesTotalSendoPago
             // 
             labelCadastroAssinantesTotalSendoPago.AutoSize = true;
-            labelCadastroAssinantesTotalSendoPago.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCadastroAssinantesTotalSendoPago.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCadastroAssinantesTotalSendoPago.Location = new Point(159, 463);
             labelCadastroAssinantesTotalSendoPago.Name = "labelCadastroAssinantesTotalSendoPago";
-            labelCadastroAssinantesTotalSendoPago.Size = new Size(75, 23);
+            labelCadastroAssinantesTotalSendoPago.Size = new Size(73, 24);
             labelCadastroAssinantesTotalSendoPago.TabIndex = 22;
             labelCadastroAssinantesTotalSendoPago.Text = "R$ 0,00";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(159, 440);
             label10.Name = "label10";
-            label10.Size = new Size(101, 23);
+            label10.Size = new Size(88, 24);
             label10.TabIndex = 21;
             label10.Text = "-------------";
             // 
             // buttonCadastroAssiantePagar
             // 
-            buttonCadastroAssiantePagar.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCadastroAssiantePagar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCadastroAssiantePagar.Location = new Point(6, 564);
             buttonCadastroAssiantePagar.Name = "buttonCadastroAssiantePagar";
             buttonCadastroAssiantePagar.Size = new Size(261, 53);
@@ -710,20 +715,20 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(6, 351);
             label9.Name = "label9";
-            label9.Size = new Size(70, 23);
+            label9.Size = new Size(71, 24);
             label9.TabIndex = 19;
             label9.Text = "Picpay:";
             // 
             // currencyTextBoxCadastroAssinantePicpay
             // 
-            currencyTextBoxCadastroAssinantePicpay.BeforeTouchSize = new Size(100, 30);
+            currencyTextBoxCadastroAssinantePicpay.BeforeTouchSize = new Size(100, 29);
             currencyTextBoxCadastroAssinantePicpay.DecimalValue = new decimal(new int[] { 0, 0, 0, 131072 });
             currencyTextBoxCadastroAssinantePicpay.Location = new Point(159, 348);
             currencyTextBoxCadastroAssinantePicpay.Name = "currencyTextBoxCadastroAssinantePicpay";
-            currencyTextBoxCadastroAssinantePicpay.Size = new Size(100, 30);
+            currencyTextBoxCadastroAssinantePicpay.Size = new Size(100, 29);
             currencyTextBoxCadastroAssinantePicpay.TabIndex = 18;
             currencyTextBoxCadastroAssinantePicpay.Text = "R$ 0,00";
             currencyTextBoxCadastroAssinantePicpay.TextChanged += CurrencyTextBoxCadastroAssinantePersyCoins_TextChanged;
@@ -731,20 +736,20 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(6, 293);
             label8.Name = "label8";
-            label8.Size = new Size(73, 23);
+            label8.Size = new Size(69, 24);
             label8.TabIndex = 17;
             label8.Text = "Débito:";
             // 
             // currencyTextBoxCadastroAssinanteDebito
             // 
-            currencyTextBoxCadastroAssinanteDebito.BeforeTouchSize = new Size(100, 30);
+            currencyTextBoxCadastroAssinanteDebito.BeforeTouchSize = new Size(100, 29);
             currencyTextBoxCadastroAssinanteDebito.DecimalValue = new decimal(new int[] { 0, 0, 0, 131072 });
             currencyTextBoxCadastroAssinanteDebito.Location = new Point(159, 290);
             currencyTextBoxCadastroAssinanteDebito.Name = "currencyTextBoxCadastroAssinanteDebito";
-            currencyTextBoxCadastroAssinanteDebito.Size = new Size(100, 30);
+            currencyTextBoxCadastroAssinanteDebito.Size = new Size(100, 29);
             currencyTextBoxCadastroAssinanteDebito.TabIndex = 16;
             currencyTextBoxCadastroAssinanteDebito.Text = "R$ 0,00";
             currencyTextBoxCadastroAssinanteDebito.TextChanged += CurrencyTextBoxCadastroAssinantePersyCoins_TextChanged;
@@ -752,20 +757,20 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(6, 235);
             label7.Name = "label7";
-            label7.Size = new Size(79, 23);
+            label7.Size = new Size(75, 24);
             label7.TabIndex = 15;
             label7.Text = "Crédito:";
             // 
             // currencyTextBoxCadastroAssinanteCredito
             // 
-            currencyTextBoxCadastroAssinanteCredito.BeforeTouchSize = new Size(100, 30);
+            currencyTextBoxCadastroAssinanteCredito.BeforeTouchSize = new Size(100, 29);
             currencyTextBoxCadastroAssinanteCredito.DecimalValue = new decimal(new int[] { 0, 0, 0, 131072 });
             currencyTextBoxCadastroAssinanteCredito.Location = new Point(159, 232);
             currencyTextBoxCadastroAssinanteCredito.Name = "currencyTextBoxCadastroAssinanteCredito";
-            currencyTextBoxCadastroAssinanteCredito.Size = new Size(100, 30);
+            currencyTextBoxCadastroAssinanteCredito.Size = new Size(100, 29);
             currencyTextBoxCadastroAssinanteCredito.TabIndex = 14;
             currencyTextBoxCadastroAssinanteCredito.Text = "R$ 0,00";
             currencyTextBoxCadastroAssinanteCredito.TextChanged += CurrencyTextBoxCadastroAssinantePersyCoins_TextChanged;
@@ -773,20 +778,20 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(6, 409);
             label6.Name = "label6";
-            label6.Size = new Size(99, 23);
+            label6.Size = new Size(97, 24);
             label6.TabIndex = 13;
             label6.Text = "Dinheiro :(";
             // 
             // currencyTextBoxCadastroAssinanteDinheiro
             // 
-            currencyTextBoxCadastroAssinanteDinheiro.BeforeTouchSize = new Size(100, 30);
+            currencyTextBoxCadastroAssinanteDinheiro.BeforeTouchSize = new Size(100, 29);
             currencyTextBoxCadastroAssinanteDinheiro.DecimalValue = new decimal(new int[] { 0, 0, 0, 131072 });
             currencyTextBoxCadastroAssinanteDinheiro.Location = new Point(159, 406);
             currencyTextBoxCadastroAssinanteDinheiro.Name = "currencyTextBoxCadastroAssinanteDinheiro";
-            currencyTextBoxCadastroAssinanteDinheiro.Size = new Size(100, 30);
+            currencyTextBoxCadastroAssinanteDinheiro.Size = new Size(100, 29);
             currencyTextBoxCadastroAssinanteDinheiro.TabIndex = 12;
             currencyTextBoxCadastroAssinanteDinheiro.Text = "R$ 0,00";
             currencyTextBoxCadastroAssinanteDinheiro.TextChanged += CurrencyTextBoxCadastroAssinantePersyCoins_TextChanged;
@@ -794,20 +799,20 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(6, 177);
             label5.Name = "label5";
-            label5.Size = new Size(40, 23);
+            label5.Size = new Size(41, 24);
             label5.TabIndex = 11;
             label5.Text = "Pix:";
             // 
             // currencyTextBoxCadastroAssinantePix
             // 
-            currencyTextBoxCadastroAssinantePix.BeforeTouchSize = new Size(100, 30);
+            currencyTextBoxCadastroAssinantePix.BeforeTouchSize = new Size(100, 29);
             currencyTextBoxCadastroAssinantePix.DecimalValue = new decimal(new int[] { 0, 0, 0, 131072 });
             currencyTextBoxCadastroAssinantePix.Location = new Point(159, 174);
             currencyTextBoxCadastroAssinantePix.Name = "currencyTextBoxCadastroAssinantePix";
-            currencyTextBoxCadastroAssinantePix.Size = new Size(100, 30);
+            currencyTextBoxCadastroAssinantePix.Size = new Size(100, 29);
             currencyTextBoxCadastroAssinantePix.TabIndex = 10;
             currencyTextBoxCadastroAssinantePix.Text = "R$ 0,00";
             currencyTextBoxCadastroAssinantePix.TextChanged += CurrencyTextBoxCadastroAssinantePersyCoins_TextChanged;
@@ -815,40 +820,40 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(6, 119);
             label4.Name = "label4";
-            label4.Size = new Size(108, 23);
+            label4.Size = new Size(110, 24);
             label4.TabIndex = 9;
             label4.Text = "PersyCoins:";
             // 
             // labelCadastroAssinantesSaldoPersyCoins
             // 
             labelCadastroAssinantesSaldoPersyCoins.AutoSize = true;
-            labelCadastroAssinantesSaldoPersyCoins.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCadastroAssinantesSaldoPersyCoins.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelCadastroAssinantesSaldoPersyCoins.Location = new Point(171, 49);
             labelCadastroAssinantesSaldoPersyCoins.Name = "labelCadastroAssinantesSaldoPersyCoins";
-            labelCadastroAssinantesSaldoPersyCoins.Size = new Size(21, 23);
+            labelCadastroAssinantesSaldoPersyCoins.Size = new Size(20, 24);
             labelCadastroAssinantesSaldoPersyCoins.TabIndex = 8;
             labelCadastroAssinantesSaldoPersyCoins.Text = "0";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(6, 49);
             label3.Name = "label3";
-            label3.Size = new Size(158, 23);
+            label3.Size = new Size(163, 24);
             label3.TabIndex = 7;
             label3.Text = "Saldo PersyCoins:";
             // 
             // currencyTextBoxCadastroAssinantePersyCoins
             // 
-            currencyTextBoxCadastroAssinantePersyCoins.BeforeTouchSize = new Size(100, 30);
+            currencyTextBoxCadastroAssinantePersyCoins.BeforeTouchSize = new Size(100, 29);
             currencyTextBoxCadastroAssinantePersyCoins.DecimalValue = new decimal(new int[] { 0, 0, 0, 131072 });
             currencyTextBoxCadastroAssinantePersyCoins.Location = new Point(159, 116);
             currencyTextBoxCadastroAssinantePersyCoins.Name = "currencyTextBoxCadastroAssinantePersyCoins";
-            currencyTextBoxCadastroAssinantePersyCoins.Size = new Size(100, 30);
+            currencyTextBoxCadastroAssinantePersyCoins.Size = new Size(100, 29);
             currencyTextBoxCadastroAssinantePersyCoins.TabIndex = 0;
             currencyTextBoxCadastroAssinantePersyCoins.Text = "R$ 0,00";
             currencyTextBoxCadastroAssinantePersyCoins.TextChanged += CurrencyTextBoxCadastroAssinantePersyCoins_TextChanged;
@@ -856,20 +861,20 @@
             // labelCadastroAssinantesValorTotalTexto
             // 
             labelCadastroAssinantesValorTotalTexto.AutoSize = true;
-            labelCadastroAssinantesValorTotalTexto.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCadastroAssinantesValorTotalTexto.Location = new Point(336, 39);
+            labelCadastroAssinantesValorTotalTexto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCadastroAssinantesValorTotalTexto.Location = new Point(323, 190);
             labelCadastroAssinantesValorTotalTexto.Name = "labelCadastroAssinantesValorTotalTexto";
-            labelCadastroAssinantesValorTotalTexto.Size = new Size(148, 23);
+            labelCadastroAssinantesValorTotalTexto.Size = new Size(153, 24);
             labelCadastroAssinantesValorTotalTexto.TabIndex = 9;
             labelCadastroAssinantesValorTotalTexto.Text = "Valor a ser pago:";
             labelCadastroAssinantesValorTotalTexto.Visible = false;
             // 
             // buttonCadastroAssianteConfirmarDados
             // 
-            buttonCadastroAssianteConfirmarDados.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonCadastroAssianteConfirmarDados.Location = new Point(18, 646);
+            buttonCadastroAssianteConfirmarDados.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonCadastroAssianteConfirmarDados.Location = new Point(323, 77);
             buttonCadastroAssianteConfirmarDados.Name = "buttonCadastroAssianteConfirmarDados";
-            buttonCadastroAssianteConfirmarDados.Size = new Size(273, 53);
+            buttonCadastroAssianteConfirmarDados.Size = new Size(204, 84);
             buttonCadastroAssianteConfirmarDados.TabIndex = 5;
             buttonCadastroAssianteConfirmarDados.Text = "Prosseguir para pagamento";
             buttonCadastroAssianteConfirmarDados.UseVisualStyleBackColor = true;
@@ -881,8 +886,8 @@
             groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButtonCadastroAssinantes12meses);
             groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButtonCadastroAssinantes6meses);
             groupBoxCadastroAssinantesTempoPlano.Controls.Add(radioButtonCadastroAssinantes1mes);
-            groupBoxCadastroAssinantesTempoPlano.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxCadastroAssinantesTempoPlano.Location = new Point(18, 408);
+            groupBoxCadastroAssinantesTempoPlano.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBoxCadastroAssinantesTempoPlano.Location = new Point(18, 347);
             groupBoxCadastroAssinantesTempoPlano.Name = "groupBoxCadastroAssinantesTempoPlano";
             groupBoxCadastroAssinantesTempoPlano.Size = new Size(273, 222);
             groupBoxCadastroAssinantesTempoPlano.TabIndex = 4;
@@ -895,7 +900,7 @@
             radioButtonCadastroAssinantes12meses.AutoSize = true;
             radioButtonCadastroAssinantes12meses.Location = new Point(15, 179);
             radioButtonCadastroAssinantes12meses.Name = "radioButtonCadastroAssinantes12meses";
-            radioButtonCadastroAssinantes12meses.Size = new Size(109, 27);
+            radioButtonCadastroAssinantes12meses.Size = new Size(109, 28);
             radioButtonCadastroAssinantes12meses.TabIndex = 2;
             radioButtonCadastroAssinantes12meses.TabStop = true;
             radioButtonCadastroAssinantes12meses.Text = "12 Meses";
@@ -907,7 +912,7 @@
             radioButtonCadastroAssinantes6meses.AutoSize = true;
             radioButtonCadastroAssinantes6meses.Location = new Point(15, 110);
             radioButtonCadastroAssinantes6meses.Name = "radioButtonCadastroAssinantes6meses";
-            radioButtonCadastroAssinantes6meses.Size = new Size(98, 27);
+            radioButtonCadastroAssinantes6meses.Size = new Size(99, 28);
             radioButtonCadastroAssinantes6meses.TabIndex = 1;
             radioButtonCadastroAssinantes6meses.TabStop = true;
             radioButtonCadastroAssinantes6meses.Text = "6 Meses";
@@ -919,7 +924,7 @@
             radioButtonCadastroAssinantes1mes.AutoSize = true;
             radioButtonCadastroAssinantes1mes.Location = new Point(15, 41);
             radioButtonCadastroAssinantes1mes.Name = "radioButtonCadastroAssinantes1mes";
-            radioButtonCadastroAssinantes1mes.Size = new Size(80, 27);
+            radioButtonCadastroAssinantes1mes.Size = new Size(79, 28);
             radioButtonCadastroAssinantes1mes.TabIndex = 0;
             radioButtonCadastroAssinantes1mes.TabStop = true;
             radioButtonCadastroAssinantes1mes.Text = "1 Mês";
@@ -931,8 +936,8 @@
             groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButtonCadastroAssinantesFamily);
             groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButtonCadastroAssinantesHolics);
             groupBoxCadastroAssinantesPlanoEscolhido.Controls.Add(radioButtonCadastroAssinantesForFun);
-            groupBoxCadastroAssinantesPlanoEscolhido.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxCadastroAssinantesPlanoEscolhido.Location = new Point(18, 148);
+            groupBoxCadastroAssinantesPlanoEscolhido.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBoxCadastroAssinantesPlanoEscolhido.Location = new Point(18, 104);
             groupBoxCadastroAssinantesPlanoEscolhido.Name = "groupBoxCadastroAssinantesPlanoEscolhido";
             groupBoxCadastroAssinantesPlanoEscolhido.Size = new Size(273, 222);
             groupBoxCadastroAssinantesPlanoEscolhido.TabIndex = 3;
@@ -945,7 +950,7 @@
             radioButtonCadastroAssinantesFamily.AutoSize = true;
             radioButtonCadastroAssinantesFamily.Location = new Point(15, 179);
             radioButtonCadastroAssinantesFamily.Name = "radioButtonCadastroAssinantesFamily";
-            radioButtonCadastroAssinantesFamily.Size = new Size(115, 27);
+            radioButtonCadastroAssinantesFamily.Size = new Size(117, 28);
             radioButtonCadastroAssinantesFamily.TabIndex = 2;
             radioButtonCadastroAssinantesFamily.TabStop = true;
             radioButtonCadastroAssinantesFamily.Text = "For Family";
@@ -957,7 +962,7 @@
             radioButtonCadastroAssinantesHolics.AutoSize = true;
             radioButtonCadastroAssinantesHolics.Location = new Point(15, 110);
             radioButtonCadastroAssinantesHolics.Name = "radioButtonCadastroAssinantesHolics";
-            radioButtonCadastroAssinantesHolics.Size = new Size(113, 27);
+            radioButtonCadastroAssinantesHolics.Size = new Size(114, 28);
             radioButtonCadastroAssinantesHolics.TabIndex = 1;
             radioButtonCadastroAssinantesHolics.TabStop = true;
             radioButtonCadastroAssinantesHolics.Text = "For Holics";
@@ -969,7 +974,7 @@
             radioButtonCadastroAssinantesForFun.AutoSize = true;
             radioButtonCadastroAssinantesForFun.Location = new Point(15, 41);
             radioButtonCadastroAssinantesForFun.Name = "radioButtonCadastroAssinantesForFun";
-            radioButtonCadastroAssinantesForFun.Size = new Size(93, 27);
+            radioButtonCadastroAssinantesForFun.Size = new Size(96, 28);
             radioButtonCadastroAssinantesForFun.TabIndex = 0;
             radioButtonCadastroAssinantesForFun.TabStop = true;
             radioButtonCadastroAssinantesForFun.Text = "For Fun";
@@ -978,46 +983,63 @@
             // 
             // textBoxCadastroAssinantesSobreNome
             // 
-            textBoxCadastroAssinantesSobreNome.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCadastroAssinantesSobreNome.Location = new Point(149, 82);
+            textBoxCadastroAssinantesSobreNome.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxCadastroAssinantesSobreNome.Location = new Point(149, 59);
             textBoxCadastroAssinantesSobreNome.Name = "textBoxCadastroAssinantesSobreNome";
-            textBoxCadastroAssinantesSobreNome.Size = new Size(142, 30);
+            textBoxCadastroAssinantesSobreNome.Size = new Size(142, 29);
             textBoxCadastroAssinantesSobreNome.TabIndex = 2;
             textBoxCadastroAssinantesSobreNome.TextChanged += TextBoxCadastroAssinantesSobreNome_TextChanged;
             // 
             // textBoxCadastroAssinantesNome
             // 
-            textBoxCadastroAssinantesNome.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCadastroAssinantesNome.Location = new Point(149, 36);
+            textBoxCadastroAssinantesNome.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxCadastroAssinantesNome.Location = new Point(149, 13);
             textBoxCadastroAssinantesNome.Name = "textBoxCadastroAssinantesNome";
-            textBoxCadastroAssinantesNome.Size = new Size(142, 30);
+            textBoxCadastroAssinantesNome.Size = new Size(142, 29);
             textBoxCadastroAssinantesNome.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(18, 85);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(18, 62);
             label2.Name = "label2";
-            label2.Size = new Size(112, 23);
+            label2.Size = new Size(115, 24);
             label2.TabIndex = 1;
             label2.Text = "Sobrenome:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Lato", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(18, 39);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(18, 16);
             label1.Name = "label1";
-            label1.Size = new Size(67, 23);
+            label1.Size = new Size(67, 24);
             label1.TabIndex = 0;
             label1.Text = "Nome:";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(16, 46);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(151, 518);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Nome
+            // 
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
             // 
             // JanelaCentral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1784, 811);
+            ClientSize = new Size(1410, 699);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "JanelaCentral";
@@ -1026,6 +1048,7 @@
             FormClosed += JanelaCentral_FormClosed;
             tabControl1.ResumeLayout(false);
             tabPageClientes.ResumeLayout(false);
+            groupBoxClientesMesaAdd.ResumeLayout(false);
             groupBoxClientes.ResumeLayout(false);
             groupBoxClientesNovaMesa.ResumeLayout(false);
             groupBoxClientesNovaMesa.PerformLayout();
@@ -1043,6 +1066,7 @@
             groupBoxCadastroAssinantesTempoPlano.PerformLayout();
             groupBoxCadastroAssinantesPlanoEscolhido.ResumeLayout(false);
             groupBoxCadastroAssinantesPlanoEscolhido.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1124,5 +1148,7 @@
         private ComboBox comboBoxClienteNovaMesaNomeAssinante;
         private Button buttonClientesAdd;
         private Label labelClienteNrMesa;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Nome;
     }
 }
