@@ -11,10 +11,14 @@ namespace Caixa_Central
         [JsonProperty("preco")]
         public decimal Valor { get; set; }
 
-        public Pedido(string nome, decimal valor)
+        [JsonProperty("quantidade")]
+        public int Quantidade { get; set; }
+
+        public Pedido(string nome, decimal valor,int quantidade)
         {
             Nome = nome;
             Valor = valor;
+            Quantidade = quantidade;
         }
 
         public async void AdicionarPedido(string idMesa)

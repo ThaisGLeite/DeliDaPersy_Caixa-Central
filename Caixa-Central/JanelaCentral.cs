@@ -1,7 +1,13 @@
 ﻿using Newtonsoft.Json;
+using Syncfusion.Windows.Forms.Grid;
+using Syncfusion.WinForms.DataGrid;
+using Syncfusion.WinForms.DataGrid.Enums;
+using System.Collections;
 using System.Globalization;
+using System.Security.Policy;
 using System.Text;
 
+#pragma warning disable CS8604 // Possible null reference argument.
 namespace Caixa_Central
 {
     public partial class JanelaCentral : Form
@@ -9,7 +15,7 @@ namespace Caixa_Central
         readonly Usuario usuario;
         private readonly HttpClient httpClient;
         List<Assinante>? assinantes;
-        List<Mesa> mesasOcupadas;
+        List<Mesa>? mesasOcupadas;
 
         public JanelaCentral(string nome)
         {
@@ -127,7 +133,7 @@ namespace Caixa_Central
             string responseContent;
 
             //Preencher a URL com o plano escolhido
-            string url = "http://h6sdpd5uhc.execute-api.us-east-1.amazonaws.com/assinatura/planos";
+            string url = Auxiliar.urlAssinatura;
             if (radioButtonCadastroAssinantesForFun.Checked)
             {
                 url += "/Fun";
@@ -219,8 +225,8 @@ namespace Caixa_Central
             var json = JsonConvert.SerializeObject(assinante);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            string url = "http://h6sdpd5uhc.execute-api.us-east-1.amazonaws.com/assinatura/novaassinatura";
-            var response = await httpClient.PostAsync(url, content);
+           
+            var response = await httpClient.PostAsync(Auxiliar.urlAssinaturaNova, content);
             if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadAsStringAsync();
@@ -292,11 +298,11 @@ namespace Caixa_Central
             string responseContent;
 
             //Preencher a URL com o plano escolhido
-            string url = "http://h6sdpd5uhc.execute-api.us-east-1.amazonaws.com/assinatura/assinaturas";
+            
             try
             {
                 // Send GET request to API
-                HttpResponseMessage response = await httpClient.GetAsync(url);
+                HttpResponseMessage response = await httpClient.GetAsync(Auxiliar.urlAssinaturas);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
@@ -326,9 +332,28 @@ namespace Caixa_Central
             {
                 string buttonName = clickedButton.Name; // Get the name of the clicked button
                 string nrMesa = buttonName[^2..]; // Get the number of the clicked button
-                if (mesasOcupadas.Find(x => x.Id == nrMesa).Ocupada)
+                Mesa? mesa = mesasOcupadas.Find(x => x.Id == nrMesa);
+                if (mesa != null)
                 {
+                    if (mesa.Ocupada)
+                   {
+                        mesa.UpdatePedidos();
+                            Pedido[] temp = new Pedido[0];
+                        if (mesa.Pedidos != null)
+                        {
+                           temp = mesa.Pedidos.Values.ToArray(); 
+                        }
+                        sfDataGridClientePedidos.AutoGenerateColumns = false;
+                        sfDataGridClientePedidos.DataSource = temp;
+                        sfDataGridClientePedidos.Columns.Add(new GridTextColumn() { MappingName = "Nome" });
+                        sfDataGridClientePedidos.Columns.Add(new GridNumericColumn() { MappingName = "Valor" });
+                        sfDataGridClientePedidos.Columns.Add(new GridNumericColumn() { MappingName = "Quantidade" });
+                        sfDataGridClientePedidos.Columns["Nome"].HeaderText = "Item";
+                        sfDataGridClientePedidos.Columns["Valor"].HeaderText = "Valor";
+                        sfDataGridClientePedidos.Columns["Quantidade"].HeaderText = "Quantidade";
 
+                        sfDataGridClientePedidos.Refresh();
+                    }
                 }
                 else
                 {
@@ -383,7 +408,7 @@ namespace Caixa_Central
             var httpClient = new HttpClient();
             var json = JsonConvert.SerializeObject(mesa);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            await httpClient.PutAsync("https://rr2fat3qw6.execute-api.us-east-1.amazonaws.com/api-mesas/mesa", content);
+            await httpClient.PutAsync(Auxiliar.urlMesa, content);
             MessageBox.Show("Mesa " + nrMesa + " iniciada com sucesso!");
             GetAllMesasAsync();
             groupBoxClientesMesaAdd.Visible = true;
@@ -391,7 +416,7 @@ namespace Caixa_Central
             if (!checkBoxClienteUsarPassaporteAssinante.Checked)
             {
                 //Adicionar o pedido passaporte na lista de pedidos da mesa
-                Pedido pedido = new("Passaporte", 10);
+                Pedido pedido = new("Passaporte", 10,1);
                 pedido.AdicionarPedido(nrMesa);
             }
 
@@ -401,3 +426,4 @@ namespace Caixa_Central
         }
     }
 }
+#pragma warning restore CS8604 // Possible null reference argument.

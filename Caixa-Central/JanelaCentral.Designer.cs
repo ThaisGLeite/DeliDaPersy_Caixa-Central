@@ -106,8 +106,8 @@
             textBoxCadastroAssinantesNome = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             Nome = new DataGridViewTextBoxColumn();
+            sfDataGridClientePedidos = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             tabControl1.SuspendLayout();
             tabPageClientes.SuspendLayout();
             groupBoxClientesMesaAdd.SuspendLayout();
@@ -123,7 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)currencyTextBoxCadastroAssinantePersyCoins).BeginInit();
             groupBoxCadastroAssinantesTempoPlano.SuspendLayout();
             groupBoxCadastroAssinantesPlanoEscolhido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sfDataGridClientePedidos).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -134,7 +134,7 @@
             tabControl1.Location = new Point(2, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1400, 700);
+            tabControl1.Size = new Size(1412, 700);
             tabControl1.TabIndex = 0;
             // 
             // tabPageClientes
@@ -145,18 +145,18 @@
             tabPageClientes.Location = new Point(4, 24);
             tabPageClientes.Name = "tabPageClientes";
             tabPageClientes.Padding = new Padding(3);
-            tabPageClientes.Size = new Size(1392, 672);
+            tabPageClientes.Size = new Size(1404, 672);
             tabPageClientes.TabIndex = 0;
             tabPageClientes.Text = "Clientes";
             tabPageClientes.Enter += TabPageClientes_EnterAsync;
             // 
             // groupBoxClientesMesaAdd
             // 
-            groupBoxClientesMesaAdd.Controls.Add(dataGridView1);
+            groupBoxClientesMesaAdd.Controls.Add(sfDataGridClientePedidos);
             groupBoxClientesMesaAdd.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             groupBoxClientesMesaAdd.Location = new Point(884, 3);
             groupBoxClientesMesaAdd.Name = "groupBoxClientesMesaAdd";
-            groupBoxClientesMesaAdd.Size = new Size(656, 666);
+            groupBoxClientesMesaAdd.Size = new Size(514, 663);
             groupBoxClientesMesaAdd.TabIndex = 22;
             groupBoxClientesMesaAdd.TabStop = false;
             groupBoxClientesMesaAdd.Text = "NOME CLIENTE";
@@ -206,7 +206,7 @@
             groupBoxClientesNovaMesa.Controls.Add(checkBoxClienteUsarPassaporteAssinante);
             groupBoxClientesNovaMesa.Controls.Add(textBoxClientesNovoNome);
             groupBoxClientesNovaMesa.Controls.Add(label13);
-            groupBoxClientesNovaMesa.Location = new Point(20, 510);
+            groupBoxClientesNovaMesa.Location = new Point(20, 486);
             groupBoxClientesNovaMesa.Name = "groupBoxClientesNovaMesa";
             groupBoxClientesNovaMesa.Size = new Size(830, 116);
             groupBoxClientesNovaMesa.TabIndex = 46;
@@ -555,7 +555,7 @@
             tabPageCaixa.Location = new Point(4, 24);
             tabPageCaixa.Name = "tabPageCaixa";
             tabPageCaixa.Padding = new Padding(3);
-            tabPageCaixa.Size = new Size(1392, 672);
+            tabPageCaixa.Size = new Size(1404, 672);
             tabPageCaixa.TabIndex = 1;
             tabPageCaixa.Text = "Caixa";
             // 
@@ -576,7 +576,7 @@
             CadastroAssinantes.Location = new Point(4, 24);
             CadastroAssinantes.Name = "CadastroAssinantes";
             CadastroAssinantes.Padding = new Padding(3);
-            CadastroAssinantes.Size = new Size(1392, 672);
+            CadastroAssinantes.Size = new Size(1404, 672);
             CadastroAssinantes.TabIndex = 2;
             CadastroAssinantes.Text = "Cadastro Assinantes";
             // 
@@ -1018,22 +1018,24 @@
             label1.TabIndex = 0;
             label1.Text = "Nome:";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(151, 518);
-            dataGridView1.TabIndex = 0;
-            // 
             // Nome
             // 
             Nome.HeaderText = "Nome";
             Nome.Name = "Nome";
+            // 
+            // sfDataGridClientePedidos
+            // 
+            sfDataGridClientePedidos.AccessibleName = "Table";
+            sfDataGridClientePedidos.Location = new Point(6, 34);
+            sfDataGridClientePedidos.Name = "sfDataGridClientePedidos";
+            sfDataGridClientePedidos.Size = new Size(300, 622);
+            sfDataGridClientePedidos.Style.BorderColor = Color.FromArgb(100, 100, 100);
+            sfDataGridClientePedidos.Style.CheckBoxStyle.CheckedBackColor = Color.FromArgb(0, 120, 215);
+            sfDataGridClientePedidos.Style.CheckBoxStyle.CheckedBorderColor = Color.FromArgb(0, 120, 215);
+            sfDataGridClientePedidos.Style.CheckBoxStyle.IndeterminateBorderColor = Color.FromArgb(0, 120, 215);
+            sfDataGridClientePedidos.Style.HyperlinkStyle.DefaultLinkColor = Color.FromArgb(0, 120, 215);
+            sfDataGridClientePedidos.TabIndex = 0;
+            sfDataGridClientePedidos.Text = "sfDataGrid1";
             // 
             // JanelaCentral
             // 
@@ -1066,7 +1068,7 @@
             groupBoxCadastroAssinantesTempoPlano.PerformLayout();
             groupBoxCadastroAssinantesPlanoEscolhido.ResumeLayout(false);
             groupBoxCadastroAssinantesPlanoEscolhido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sfDataGridClientePedidos).EndInit();
             ResumeLayout(false);
         }
 
@@ -1148,7 +1150,7 @@
         private ComboBox comboBoxClienteNovaMesaNomeAssinante;
         private Button buttonClientesAdd;
         private Label labelClienteNrMesa;
-        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Nome;
+        private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGridClientePedidos;
     }
 }
